@@ -1,3 +1,4 @@
-import React from "react"
+import React from 'react'
+import '../components/all.scss'
 
-export default () => <div>Hello world!</div>
+export default () => <nav className="navbar">Hello world!</nav>

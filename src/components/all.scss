@@ -4,6 +4,7 @@
 //- Full Page Height
 #___gatsby {
   > div {
+    background-color: $black;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
