@@ -1,4 +1,6 @@
 import React from 'react'
-import '../components/all.scss'
+import Home from './Home'
 
-export default () => <nav className="navbar">Hello world!</nav>
+const Index = () => <Home />
+
+export default Index

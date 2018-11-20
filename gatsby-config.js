@@ -1,8 +1,8 @@
-const siteMeta = require('./site-config')
+const config = require('./config/site')
 
 module.exports = {
     siteMetadata: {
-        ...siteMeta,
+        ...config
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -15,21 +15,23 @@ module.exports = {
                 url:
                     'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master',
                 typeName: 'ViciousCMS',
-                refetchInterval: 60,
-            },
+                refetchInterval: 60
+            }
         },
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Vicious Ink Tatto Shop',
-                short_name: 'VIT shop',
-                start_url: '/',
-                background_color: '#000',
-                theme_color: '#000',
-                display: 'minimal-ui',
-            },
+                name: config.title,
+                short_name: config.shortName,
+                description: config.description,
+                start_url: config.pathPrefix,
+                background_color: config.backgroundColor,
+                theme_color: config.themeColor,
+                display: 'standalone',
+                icon: config.favicon
+            }
         },
         'gatsby-plugin-sass',
-        'gatsby-plugin-offline',
+        'gatsby-plugin-offline'
     ],
 }
