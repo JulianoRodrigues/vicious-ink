@@ -1,6 +1,6 @@
 import React from 'react'
-import Home from './Home'
+import Welcome from './Welcome'
 
-const Index = () => <Home />
+const Index = () => <Welcome />
 
 export default Index
