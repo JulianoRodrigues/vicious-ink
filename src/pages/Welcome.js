@@ -3,15 +3,14 @@ import { StaticQuery, Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 // eslint-disable-next-line react/prop-types
-const Welcome = () => (
+export const Welcome = () => (
     <StaticQuery
         query={graphql`
             query {
-                vicious {
-                    images(where: { id: "cjorpo77hyxb80932ck5ho1kn" }) {
-                        id
-                        image {
-                            url
+                bannerImage: file(relativePath: { eq: "banner.png" }) {
+                    childImageSharp {
+                        fluid(maxWidth: 1500) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -19,11 +18,12 @@ const Welcome = () => (
         `}
         render={data => {
             return (
-                <Img
-                    title="Header image"
-                    alt="Greek food laid out on table"
-                    sizes={image}
-                />
+                <div>
+                    <Img
+                        css={{ top: 0, left: 0, right: 0, bottom: 0 }}
+                        fluid={data.bannerImage.childImageSharp.fluid}
+                    />
+                </div>
             )
         }}
     />

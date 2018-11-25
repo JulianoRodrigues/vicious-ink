@@ -1,6 +1,6 @@
 import React from 'react'
-import Welcome from './Welcome'
+import Layout from '../components/layout'
 
-const Index = () => <Welcome />
+const Index = () => <Layout />
 
 export default Index
