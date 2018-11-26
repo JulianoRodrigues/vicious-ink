@@ -9,7 +9,7 @@ export const Welcome = () => (
             query {
                 bannerImage: file(relativePath: { eq: "banner.png" }) {
                     childImageSharp {
-                        fluid(maxWidth: 1500) {
+                        fluid(maxWidth: 1000) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -18,11 +18,12 @@ export const Welcome = () => (
         `}
         render={data => {
             return (
-                <div>
+                <div className="container">
                     <Img
-                        css={{ top: 0, left: 0, right: 0, bottom: 0 }}
+                        css={{ margin: 0 }}
                         fluid={data.bannerImage.childImageSharp.fluid}
                     />
+                    <Link to="/home">Home</Link>
                 </div>
             )
         }}

@@ -1,15 +1,19 @@
 import React, { Fragment } from 'react'
+import { ThemeProvider } from 'styled-components'
+
 import { SEO } from './SEO'
 import { Welcome } from '../pages/welcome'
-import { typography, globalTheme } from '../styles/global'
 
-globalTheme()
-typography()
+import GlobalStyle from '../styles/global'
+import theme from '../styles/theme'
 
 export const Layout = () => (
     <Fragment>
         <SEO />
-        <Welcome />
+        <ThemeProvider theme={theme}>
+            <Welcome />
+        </ThemeProvider>
+        <GlobalStyle />
     </Fragment>
 )
 
