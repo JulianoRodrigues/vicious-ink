@@ -6,6 +6,15 @@ const theme = {
         gray: '#aaa',
         silver: '#ddd',
         gold: '#ffd700'
+    },
+    sizes: {
+        maxWidth: '1050px',
+        maxWidthCentered: '650px'
+    },
+    responsive: {
+        small: '35em',
+        medium: '50em',
+        large: '70em'
     }
 }
 

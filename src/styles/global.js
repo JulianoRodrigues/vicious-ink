@@ -2,10 +2,10 @@ import remcalc from 'remcalc'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto')
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+    
+    html, body, div, span, object,
+    h1, h2, h3, h4, h5, h6, p, a,
     del, dfn, em, img, ins, kbd, q, s, samp,
     small, strike, strong, sub, sup, tt, var,
     b, u, i, center,
@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle`
     menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
         margin: 0;
-        padding: 0;
         border: 0;
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
     }
+
     body {
         background-color: #000;
         font-family: Roboto, Arial, sans-serif;
@@ -43,10 +43,14 @@ const GlobalStyle = createGlobalStyle`
 
     img {
         display: block;
-        width: 100%;
-        height: auto;
     }
 
+    @media screen and (min-width: 35em) {
+        html {
+          margin-right: calc(-100vw + 100%);
+          overflow-x: hidden;
+        }
+      }
 `
 
 export default GlobalStyle
