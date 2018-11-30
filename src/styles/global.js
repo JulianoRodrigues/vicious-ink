@@ -6,11 +6,10 @@ const GlobalStyle = createGlobalStyle`
     
     html, body, div, span, object,
     h1, h2, h3, h4, h5, h6, p, a,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
+    em, img, small, strike, strong, sub, sup,
     b, u, i, center,
     dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
+    form, label, legend,
     table, caption, tbody, tfoot, thead, tr, th, td,
     article, aside, canvas, details, embed,
     figure, figcaption, footer, header, hgroup,
@@ -18,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
     time, mark, audio, video {
         margin: 0;
         border: 0;
-        font-size: 100%;
-        font: inherit;
         vertical-align: baseline;
     }
 
@@ -50,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
           margin-right: calc(-100vw + 100%);
           overflow-x: hidden;
         }
-      }
+    }
 `
 
 export default GlobalStyle

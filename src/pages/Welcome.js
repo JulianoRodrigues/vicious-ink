@@ -47,7 +47,12 @@ export const Welcome = () => (
             return (
                 <Wrapper>
                     <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
-                    <TextContainer>CENAS</TextContainer>
+                    <TextContainer>
+                        CENAS
+                        <div>
+                            <Link to="/home">Click here</Link>
+                        </div>
+                    </TextContainer>
                 </Wrapper>
             )
         }}
