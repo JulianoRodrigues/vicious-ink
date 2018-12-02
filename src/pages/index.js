@@ -9,7 +9,7 @@ import Home from './home'
 const Index = ({ children }) => {
     return (
         <Layout>
-            <Helmet title={'Welcome Page'} />
+            <Helmet title={'Vicious Ink'} />
             <Main>
                 <Welcome />
                 {children}

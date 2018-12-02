@@ -1,7 +1,10 @@
 import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+
 import styled from 'styled-components'
+import remcalc from 'remcalc'
+import theme from '../styles/theme'
 
 const Wrapper = styled.section`
     position: relative;
@@ -15,8 +18,8 @@ const BgImg = styled(Img)`
     z-index: -1;
     height: 100vh;
     & > img {
-        object-fit: cover !important; // or whatever
-        object-position: 0% 0% !important; // or whatever
+        object-fit: cover !important;
+        object-position: 0% 0% !important;
         font-family: 'object-fit: cover !important; object-position: 0% 0% !important;';
     }
 `
@@ -27,6 +30,12 @@ const TextContainer = styled.div`
     position: absolute;
     bottom: 6rem;
     right: 6rem;
+`
+
+const EnterLink = styled(Link)`
+    font-size: ${remcalc(30)};
+    color: ${theme.colors.primary};
+    text-decoration: none;
 `
 
 // eslint-disable-next-line react/prop-types
@@ -48,10 +57,7 @@ export const Welcome = () => (
                 <Wrapper>
                     <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
                     <TextContainer>
-                        CENAS
-                        <div>
-                            <Link to="/home">Click here</Link>
-                        </div>
+                        <EnterLink to="/home">Enter</EnterLink>
                     </TextContainer>
                 </Wrapper>
             )
