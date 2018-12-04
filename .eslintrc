@@ -7,6 +7,10 @@
     "rules": {
         "strict": 0,
         "no-console": "warn",
+        "react/prop-types": 0,
+        "react/display-name": {
+            "ignoreTranspilerName": true
+        },
         "quotes": [
             "warn",
             "single"
