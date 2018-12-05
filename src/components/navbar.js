@@ -1,32 +1,38 @@
 import React from 'react'
+import Headroom from 'react-headroom'
 
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import theme from '../styles/theme'
-import Header from './header';
+import { NavLink } from '../styles/link'
+import Header from './header'
 
 const Nav = styled.nav`
-    box-shadow: none;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 5px;
-    width: auto;
-    background: transparent;
-    height: 100%;
-    overflow: initial;
-    transform: none;
-    transition: none;
-    padding: 0;
+    a {
+        position: relative;
+        display: inline-block;
+        margin: 15px 20px;
+        outline: none;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
 `
 
 const NavBar = () => {
     return (
-        <Header>
-            <Nav>
-                coisas
-            </Nav>
-        </Header>
+        <Headroom calcHeightOnResize disableInlineStyles>
+            <Header>
+                <Nav>
+                    <NavLink to="/home" data-hover="Home">
+                        Home
+                    </NavLink>
+                    <NavLink to="/home" data-hover="Test">
+                        Test
+                    </NavLink>
+                </Nav>
+            </Header>
+        </Headroom>
     )
 }
 

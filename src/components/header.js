@@ -16,7 +16,7 @@ const Container = styled.div`
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
 `
 
 export default props => (

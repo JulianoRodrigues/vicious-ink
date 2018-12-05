@@ -1,12 +1,10 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Main from '../components/main'
 
 import styled from 'styled-components'
-import remcalc from 'remcalc'
-import theme from '../styles/theme'
+import { WelcomeLink } from '../styles/link'
 
 const Wrapper = styled.section`
     position: relative;
@@ -34,42 +32,6 @@ const TextContainer = styled.div`
     right: 6rem;
 `
 
-const EnterLink = styled(Link)`
-    font-size: ${remcalc(35)};
-    color: ${theme.colors.primary};
-    text-decoration: none;
-    position: relative;
-    margin: 15px 25px;
-    text-transform: uppercase;
-    &::before,
-    &::after {
-        display: inline-block;
-        opacity: 0;
-        -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-        -moz-transition: -moz-transform 0.3s, opacity 0.2s;
-        transition: transform 0.3s, opacity 0.2s;
-    }
-    &::before {
-        margin-right: 10px;
-        content: '[';
-        transform: translateX(20px);
-    }
-    &::after {
-        margin-left: 10px;
-        content: ']';
-        transform: translateX(-20px);
-    }
-    &:hover::before,
-    &:hover::after,
-    &:focus::before,
-    &:focus::after {
-        opacity: 1;
-        -webkit-transform: translateX(0px);
-        -moz-transform: translateX(0px);
-        transform: translateX(0px);
-    }
-`
-
 // eslint-disable-next-line react/prop-types
 export const Welcome = () => (
     <StaticQuery
@@ -90,7 +52,7 @@ export const Welcome = () => (
                     <Wrapper>
                         <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
                         <TextContainer>
-                            <EnterLink to="/home">Enter</EnterLink>
+                            <WelcomeLink to="/home">Enter</WelcomeLink>
                         </TextContainer>
                     </Wrapper>
                 </Main>
