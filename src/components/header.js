@@ -5,7 +5,6 @@ import remcalc from 'remcalc'
 
 const Header = styled('header')`
     width: 100%;
-    position: fixed;
     top: 0;
     font-size: ${remcalc(15)};
     text-transform: uppercase;

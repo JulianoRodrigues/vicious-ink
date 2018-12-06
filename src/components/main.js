@@ -7,7 +7,6 @@ const Wrapper = styled.section`
 `
 
 const Main = props => {
-    // eslint-disable-next-line react/prop-types
     return <Wrapper>{props.children}</Wrapper>
 }
 
