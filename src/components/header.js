@@ -10,7 +10,7 @@ const Header = styled('header')`
     text-transform: uppercase;
 `
 const Container = styled.div`
-    height: ${remcalc(70)};
+    height: ${remcalc(65)};
     width: 90%;
     margin: 0 auto;
     display: flex;

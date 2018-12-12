@@ -15,7 +15,7 @@ const Nav = styled.nav`
         position: relative;
         color: ${theme.colors.main};
         display: inline-block;
-        margin: 15px 20px;
+        margin: 20px 20px;
         outline: none;
         text-decoration: none;
         text-transform: uppercase;

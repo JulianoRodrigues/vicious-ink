@@ -33,7 +33,7 @@ const TextContainer = styled.div`
 `
 
 // eslint-disable-next-line react/prop-types
-export const Welcome = () => (
+const Welcome = () => (
     <StaticQuery
         query={graphql`
             query {

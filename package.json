@@ -26,6 +26,7 @@
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-graphql": "^2.0.6",
     "gatsby-transformer-sharp": "^2.1.8",
+    "graphcms-image": "^1.1.0-beta4",
     "node-sass": "^4.10.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
