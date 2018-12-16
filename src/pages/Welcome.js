@@ -3,9 +3,11 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Main from '../components/main'
+import theme from '../styles/theme'
+import { Links } from '../styles/link'
 
 import styled from 'styled-components'
-import { WelcomeLink } from '../styles/link'
+import remcalc from 'remcalc'
 
 const Wrapper = styled.section`
     position: relative;
@@ -26,11 +28,15 @@ const BgImg = styled(Img)`
 `
 
 const TextContainer = styled.div`
+    font-size: ${remcalc(45)};
     box-sizing: border-box;
     max-width: 768px;
     position: absolute;
     bottom: 6rem;
     right: 6rem;
+    a {
+        color: ${theme.colors.main};
+    }
 `
 
 // eslint-disable-next-line react/prop-types
@@ -53,7 +59,9 @@ const Welcome = () => (
                     <Wrapper>
                         <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
                         <TextContainer>
-                            <WelcomeLink to="/home">Enter</WelcomeLink>
+                            <Links to="/home" data-hover="Enter">
+                                Enter
+                            </Links>
                         </TextContainer>
                     </Wrapper>
                 </Main>

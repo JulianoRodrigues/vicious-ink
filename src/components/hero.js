@@ -52,10 +52,12 @@ const Hero = () => (
                     <GraphImg
                         image={data.vicious.images[0].image}
                         maxWidth={1000}
+                        withWebp
                     />
                     <LogoImage
                         image={data.vicious.images[1].image}
                         maxWidth={1000}
+                        withWebp
                     />
                 </Wrapper>
             )

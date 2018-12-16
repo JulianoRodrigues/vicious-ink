@@ -6,11 +6,13 @@ import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 library.add(faFacebookF, faInstagram)
 
 import styled from 'styled-components'
-import { NavLink } from '../styles/link'
+import { Links } from '../styles/link'
 import Header from './header'
 import theme from '../styles/theme'
+import remcalc from 'remcalc'
 
 const Nav = styled.nav`
+    font-size: ${remcalc(15)};
     a {
         position: relative;
         color: ${theme.colors.main};
@@ -34,15 +36,15 @@ const NavBar = () => {
         <Headroom calcHeightOnResize disableInlineStyles>
             <Header>
                 <Nav>
-                    <NavLink to="/home" data-hover="Home">
+                    <Links to="/home" data-hover="Home">
                         Home
-                    </NavLink>
-                    <NavLink to="/home" data-hover="Test">
+                    </Links>
+                    <Links to="/home" data-hover="Test">
                         Test
-                    </NavLink>
-                    <NavLink to="/home" data-hover="Artist">
+                    </Links>
+                    <Links to="/home" data-hover="Artist">
                         Artist
-                    </NavLink>
+                    </Links>
                     <FontAwesomeIcon icon={['fab', 'facebook-f']} />
                     <FontAwesomeIcon icon={['fab', 'instagram']} />
                 </Nav>
