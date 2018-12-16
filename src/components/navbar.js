@@ -40,6 +40,9 @@ const NavBar = () => {
                     <NavLink to="/home" data-hover="Test">
                         Test
                     </NavLink>
+                    <NavLink to="/home" data-hover="Artist">
+                        Artist
+                    </NavLink>
                     <FontAwesomeIcon icon={['fab', 'facebook-f']} />
                     <FontAwesomeIcon icon={['fab', 'instagram']} />
                 </Nav>

@@ -15,7 +15,7 @@
             "warn",
             "single"
           ],
-          "prettier/prettier": "warn"
+        "prettier/prettier": "warn"
     },
     "extends": [
       "plugin:react/recommended"

@@ -14,7 +14,8 @@ module.exports = {
                 fieldName: 'vicious',
                 url:
                     'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master',
-                typeName: 'ViciousCMS'
+                typeName: 'ViciousCMS',
+                refetchInterval: 60
             }
         },
         {

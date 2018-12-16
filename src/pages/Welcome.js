@@ -1,6 +1,7 @@
 import React from 'react'
-import { StaticQuery, Link, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+
 import Main from '../components/main'
 
 import styled from 'styled-components'
