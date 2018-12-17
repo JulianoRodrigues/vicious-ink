@@ -32,7 +32,8 @@
     "react-dom": "^16.5.1",
     "react-headroom": "^2.2.4",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
+    "styled-flex-component": "^2.2.2"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
