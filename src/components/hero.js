@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import GraphImg from 'graphcms-image'
 import theme from '../styles/theme'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Wrapper = styled.section`
     position: relative;
@@ -22,6 +22,8 @@ const LogoImage = styled(GraphImg)`
         top: -100px;
     }
 `
+
+// TODO: Outer image style
 
 const Hero = () => (
     // eslint-disable-next-line prettier/prettier
