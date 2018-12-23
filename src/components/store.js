@@ -7,6 +7,10 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import Flex, { FlexItem } from 'styled-flex-component'
 
+const Wrapper = styled.section`
+    position: relative;
+`
+
 const Title = styled.h1`
     font-size: ${remcalc(45)};
     font-style: italic;
@@ -30,12 +34,13 @@ const Store = () => (
             }
         `}
         render={data => {
-            console.log(data.vicious.stores[0].photo)
             return (
-                <Flex center full>
-                    <FlexItem>
-                        <Title>THE STORE</Title>
-                    </FlexItem>
+                <Wrapper>
+                    <Flex center full>
+                        <FlexItem>
+                            <Title>THE STORE</Title>
+                        </FlexItem>
+                    </Flex>
                     {data.vicious.stores[0].photo.map(photo => (
                         <GraphImg
                             key={photo.handle}
@@ -44,7 +49,7 @@ const Store = () => (
                             withWebp
                         />
                     ))}
-                </Flex>
+                </Wrapper>
             )
         }}
     />
