@@ -46,6 +46,7 @@ const Store = () => (
                             key={photo.handle}
                             image={photo}
                             maxWidth={1000}
+                            fit={'scale'}
                             withWebp
                         />
                     ))}
