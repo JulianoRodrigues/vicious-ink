@@ -1,10 +1,5 @@
-/**const fetch = require('node-fetch')
+const fetch = require('node-fetch')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
-
-const assetsTypes = {
-    ASSETS: 'assets',
-    ARTISTS: 'artists'
-}
 
 exports.sourceNodes = async ({
     actions,
@@ -34,12 +29,19 @@ exports.sourceNodes = async ({
 
     const response = await Promise.all([
         fetch(
-            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={artists{id,photo{id,url}}}'
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={images{id,image{id,url,fileName}}}'
         ).then(result => result.json()),
         fetch(
-            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={assets{id,fileName,url}}'
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={artists{id,photo{id,url,fileName}}}'
+        ).then(result => result.json()),
+        fetch(
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={stores{id,photo{id,url,fileName}}}'
         ).then(result => result.json())
     ])
+
+    console.log(response[0].data.images)
+
+
 
     response.forEach(res => {
         const nodeData = processImage(res)
@@ -68,4 +70,4 @@ exports.onCreateNode = async props => {
     if (fileNode) {
         node.image___NODE = fileNode.id
     }
-}*/
+}
