@@ -1,10 +1,11 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Main from '../components/main'
 import theme from '../styles/theme'
 import { Links } from '../styles/link'
+import StaticQuery from '../queries/StaticQuery'
 
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -39,20 +40,24 @@ const TextContainer = styled.div`
     }
 `
 
+// QUERY
+const WELCOME_IMAGE = graphql`
+    query WelcomeImage {
+        bannerImage: file(relativePath: { eq: "banner.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 1000) {
+                    src
+                    srcSet
+                }
+            }
+        }
+    }
+`
+
 // eslint-disable-next-line react/prop-types
 const Welcome = () => (
     <StaticQuery
-        query={graphql`
-            query {
-                bannerImage: file(relativePath: { eq: "banner.png" }) {
-                    childImageSharp {
-                        fluid(maxWidth: 1000) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
-            }
-        `}
+        query={WELCOME_IMAGE}
         render={data => {
             return (
                 <Main>
