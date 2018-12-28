@@ -39,7 +39,7 @@ const Hero = () => (
                             ]
                         }
                     ) {
-                        image {
+                        photo {
                             handle
                             height
                             width
@@ -52,12 +52,12 @@ const Hero = () => (
             return (
                 <Wrapper>
                     <GraphImg
-                        image={data.vicious.images[0].image}
+                        image={data.vicious.images[0].photo}
                         maxWidth={1000}
                         withWebp
                     />
                     <LogoImage
-                        image={data.vicious.images[1].image}
+                        image={data.vicious.images[1].photo}
                         maxWidth={1000}
                         withWebp
                     />

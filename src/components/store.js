@@ -18,42 +18,13 @@ const Title = styled.h1`
 `
 
 const Store = () => (
-    <StaticQuery
-        query={graphql`
-            query Store {
-                vicious {
-                    stores {
-                        location
-                        photo {
-                            handle
-                            height
-                            width
-                        }
-                    }
-                }
-            }
-        `}
-        render={data => {
-            return (
-                <Wrapper>
-                    <Flex center full>
-                        <FlexItem>
-                            <Title>THE STORE</Title>
-                        </FlexItem>
-                    </Flex>
-                    {data.vicious.stores[0].photo.map(photo => (
-                        <GraphImg
-                            key={photo.handle}
-                            image={photo}
-                            maxWidth={1000}
-                            fit={'scale'}
-                            withWebp
-                        />
-                    ))}
-                </Wrapper>
-            )
-        }}
-    />
+    <Wrapper>
+        <Flex center full>
+            <FlexItem>
+                <Title>THE STORE</Title>
+            </FlexItem>
+        </Flex>
+    </Wrapper>
 )
 
 export default Store

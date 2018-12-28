@@ -29,24 +29,23 @@ exports.sourceNodes = async ({
 
     const response = await Promise.all([
         fetch(
-            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={images{id,image{id,url,fileName}}}'
-        ).then(result => result.json()),
-        fetch(
-            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={artists{id,photo{id,url,fileName}}}'
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={images{id,photo{id,url,fileName}}}'
         ).then(result => result.json()),
         fetch(
             'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={stores{id,photo{id,url,fileName}}}'
         ).then(result => result.json())
     ])
 
-    console.log(response[0].data.images)
-
-
-
-    response.forEach(res => {
-        const nodeData = processImage(res)
-        createNode(nodeData)
-    })
+    for (let res in response) {
+        let value = response[res].data
+        for (let val in value) {
+            let newValue = value[val]
+            newValue.forEach(res => {
+                const nodeData = processImage(res.photo)
+                createNode(nodeData)
+            })
+        }
+    }
 
     return
 }
