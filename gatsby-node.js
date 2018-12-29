@@ -70,3 +70,4 @@ exports.onCreateNode = async props => {
         node.image___NODE = fileNode.id
     }
 }
+

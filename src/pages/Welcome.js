@@ -48,6 +48,8 @@ const WELCOME_IMAGE = graphql`
                 fluid(maxWidth: 1000) {
                     src
                     srcSet
+                    aspectRatio
+                    sizes
                 }
             }
         }

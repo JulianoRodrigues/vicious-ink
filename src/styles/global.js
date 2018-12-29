@@ -1,6 +1,8 @@
 import remcalc from 'remcalc'
 import { createGlobalStyle } from 'styled-components'
 
+import 'tachyons'
+
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
     

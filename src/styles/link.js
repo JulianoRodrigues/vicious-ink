@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import remcalc from 'remcalc'
 import theme from '../styles/theme'
 
 export const Links = styled(Link)`
