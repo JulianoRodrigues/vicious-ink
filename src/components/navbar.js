@@ -26,10 +26,7 @@ const LOGO_IMAGE = graphql`
                     image {
                         childImageSharp {
                             fluid(maxWidth: 1000) {
-                                src
-                                srcSet
-                                aspectRatio
-                                sizes
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }

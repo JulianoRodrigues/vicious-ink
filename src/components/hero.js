@@ -10,17 +10,14 @@ const Wrapper = styled.section`
 
 const HERO_IMAGE = graphql`
     query HeroImage {
-        allImage(filter: { fileName: { eq: "HeroImageRocha.jpg" } }) {
+        allImage(filter: { fileName: { eq: "heroImage2.jpg" } }) {
             edges {
                 node {
                     fileName
                     image {
                         childImageSharp {
                             fluid(maxWidth: 1000) {
-                                src
-                                srcSet
-                                aspectRatio
-                                sizes
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }

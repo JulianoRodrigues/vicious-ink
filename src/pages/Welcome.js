@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Main from '../components/main'
@@ -46,10 +46,7 @@ const WELCOME_IMAGE = graphql`
         bannerImage: file(relativePath: { eq: "banner.png" }) {
             childImageSharp {
                 fluid(maxWidth: 1000) {
-                    src
-                    srcSet
-                    aspectRatio
-                    sizes
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
@@ -66,9 +63,11 @@ const Welcome = () => (
                     <Wrapper>
                         <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
                         <TextContainer>
-                            <Links to="/home" data-hover="Enter">
-                                Enter
-                            </Links>
+                            <Link to="/home">
+                                <span className="link dim gray b f1 f-headline-ns tc db mb3 mb4-ns">
+                                    Enter
+                                </span>
+                            </Link>
                         </TextContainer>
                     </Wrapper>
                 </Main>
