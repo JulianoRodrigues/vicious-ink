@@ -2,13 +2,10 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Main from '../components/main'
 import theme from '../styles/theme'
-import { Links } from '../styles/link'
 import StaticQuery from '../queries/StaticQuery'
 
 import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 const Wrapper = styled.section`
     position: relative;
@@ -29,12 +26,12 @@ const BgImg = styled(Img)`
 `
 
 const TextContainer = styled.div`
-    font-size: ${remcalc(45)};
     box-sizing: border-box;
     max-width: 768px;
     position: absolute;
     bottom: 6rem;
     right: 6rem;
+    text-transform: uppercase;
     a {
         color: ${theme.colors.main};
     }
@@ -59,18 +56,16 @@ const Welcome = () => (
         query={WELCOME_IMAGE}
         render={data => {
             return (
-                <Main>
-                    <Wrapper>
-                        <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
-                        <TextContainer>
-                            <Link to="/home">
-                                <span className="link dim gray b f1 f-headline-ns tc db mb3 mb4-ns">
-                                    Enter
-                                </span>
-                            </Link>
-                        </TextContainer>
-                    </Wrapper>
-                </Main>
+                <Wrapper>
+                    <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
+                    <TextContainer>
+                        <Link to="/home">
+                            <span className="link dim gray b f1 tc db mb3 mb4-ns">
+                                Enter
+                            </span>
+                        </Link>
+                    </TextContainer>
+                </Wrapper>
             )
         }}
     />

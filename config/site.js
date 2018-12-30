@@ -13,5 +13,15 @@ module.exports = {
     shortName: 'VInk',
     author: 'Juliano Rodrigues',
     themeColor: '#3e7bf2',
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    socialMedia: [
+        {
+            url: 'https://www.facebook.com/viciousinktattooshop',
+            name: 'Facebook'
+        },
+        {
+            url: 'https://www.instagram.com/luisrocha_tattooartist',
+            name: 'Instagram'
+        }
+    ]
 }

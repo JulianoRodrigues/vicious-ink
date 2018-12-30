@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 
 const HERO_IMAGE = graphql`
     query HeroImage {
-        allImage(filter: { fileName: { eq: "heroImage2.jpg" } }) {
+        allImage(filter: { fileName: { eq: "HeroImageRocha.jpg" } }) {
             edges {
                 node {
                     fileName

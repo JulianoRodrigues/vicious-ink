@@ -1,7 +1,7 @@
 import React from 'react'
 import Headroom from 'react-headroom'
 import Img from 'gatsby-image'
-import { graphql, StaticQuery, Link } from 'gatsby'
+import { StaticQuery, Link } from 'gatsby'
 
 /** 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -17,31 +17,12 @@ const LogoImage = styled(Img)`
     margin: 0 auto;
 `
 
-const LOGO_IMAGE = graphql`
-    query LogoImage {
-        allImage(filter: { fileName: { eq: "image.png" } }) {
-            edges {
-                node {
-                    fileName
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-`
-
 const NavBar = () => (
     <StaticQuery
         query={LOGO_IMAGE}
         render={data => {
             return (
-                <Headroom calcHeightOnResize disableInlineStyles>
+                <Headroom>
                     <header>
                         <nav className="pa3 pa4-ns">
                             <Link to="/home">
@@ -83,5 +64,24 @@ const NavBar = () => (
         }}
     />
 )
+
+const LOGO_IMAGE = graphql`
+    query LogoImage {
+        allImage(filter: { fileName: { eq: "image.png" } }) {
+            edges {
+                node {
+                    fileName
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default NavBar
