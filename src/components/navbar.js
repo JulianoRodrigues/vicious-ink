@@ -1,7 +1,7 @@
 import React from 'react'
 import Headroom from 'react-headroom'
 import Img from 'gatsby-image'
-import { StaticQuery, Link } from 'gatsby'
+import { StaticQuery, Link, graphql } from 'gatsby'
 
 /** 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -22,9 +22,9 @@ const NavBar = () => (
         query={LOGO_IMAGE}
         render={data => {
             return (
-                <Headroom>
+                <Headroom disableInlineStyles>
                     <header>
-                        <nav className="pa3 pa4-ns">
+                        <nav className="pa3 pa3-ns">
                             <Link to="/home">
                                 <span className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
                                     <LogoImage

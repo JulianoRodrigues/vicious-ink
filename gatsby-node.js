@@ -32,7 +32,7 @@ exports.sourceNodes = async ({
             'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={images{id,photo{id,url,fileName}}}'
         ).then(result => result.json()),
         fetch(
-            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={stores{id,photo{id,url,fileName}}}'
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={stores{id,description,photo{id,url,fileName}}}'
         ).then(result => result.json())
     ])
 
