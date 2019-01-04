@@ -18,24 +18,27 @@ const Store = () => (
     <StaticQuery
         query={STORE_IMAGE}
         render={data => {
-            console.log(data)
+            //Deconstruct store image(s)
+            const storeImage = data.allImage.edges.map(
+                ({ node: { image } }) => image
+            )
+
+            //Deconstruct store description
+            const description = data.vicious.stores.map(
+                ({ description }) => description
+            )
             return (
                 <article>
-                    <h2 className="pa4 f2 fw2 tc gray">The Studio</h2>
-                    <section className="mw8 center">
-                        <div className="cf dt-l w-100 pv4">
-                            <div className="dtc-l v-mid mw6 pr3-l">
+                    <h2 className="pa4 f2 fw2 tc gray">Our Tattoo Shop</h2>
+                    <section className="dt mw9 center ph3-ns">
+                        <div className="cf ph2-ns">
+                            <div className="dtc-l dtc-m w-100 w-50-ns pa2">
                                 <StoreImage
-                                    fixed={
-                                        data.allImage.edges[0].node.image
-                                            .childImageSharp.fixed
-                                    }
+                                    fluid={storeImage[0].childImageSharp.fluid}
                                 />
                             </div>
-                            <div className="dtc-l v-mid f6 f5-m">
-                                <p className="pa2 center">
-                                    {data.vicious.stores[0].description}
-                                </p>
+                            <div className="dtc-l dtc-m w-100 w-50-ns pa2 v-mid">
+                                <p className="pa2">{description}</p>
                             </div>
                         </div>
                     </section>
@@ -53,8 +56,8 @@ const STORE_IMAGE = graphql`
                     fileName
                     image {
                         childImageSharp {
-                            fixed(width: 500, height: 300) {
-                                ...GatsbyImageSharpFixed
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }

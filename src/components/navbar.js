@@ -21,6 +21,7 @@ const NavBar = () => (
     <StaticQuery
         query={LOGO_IMAGE}
         render={data => {
+            const { allImage } = data
             return (
                 <Headroom disableInlineStyles>
                     <header>
@@ -29,7 +30,7 @@ const NavBar = () => (
                                 <span className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
                                     <LogoImage
                                         fluid={
-                                            data.allImage.edges[0].node.image
+                                            allImage.edges[0].node.image
                                                 .childImageSharp.fluid
                                         }
                                     />
