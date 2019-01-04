@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../layouts/layout'
+import Layout from 'layouts/layout'
 import Welcome from './welcome'
-import Main from '../components/main'
+import Main from 'components/main'
 
 // eslint-disable-next-line react/prop-types
 const Index = ({ children }) => {

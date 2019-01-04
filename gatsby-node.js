@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
+const path = require('path')
 
 exports.sourceNodes = async ({
     actions,
@@ -33,6 +34,9 @@ exports.sourceNodes = async ({
         ).then(result => result.json()),
         fetch(
             'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={stores{id,description,photo{id,url,fileName}}}'
+        ).then(result => result.json()),
+        fetch(
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={banners{id,photo{id,url,fileName}}}'
         ).then(result => result.json())
     ])
 
@@ -69,4 +73,21 @@ exports.onCreateNode = async props => {
     if (fileNode) {
         node.image___NODE = fileNode.id
     }
+}
+
+/**
+ * Resolve absolute imports
+ */
+exports.onCreateWebpackConfig = ({
+    stage,
+    getConfig,
+    rules,
+    loaders,
+    actions
+}) => {
+    actions.setWebpackConfig({
+      resolve: {
+        modules: [path.resolve(__dirname, "src"), "node_modules"],
+      },
+    })
 }

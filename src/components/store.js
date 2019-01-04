@@ -28,7 +28,7 @@ const Store = () => (
                 ({ description }) => description
             )
             return (
-                <article>
+                <article className="pa4">
                     <h2 className="pa4 f2 fw2 tc gray">Our Tattoo Shop</h2>
                     <section className="dt mw9 center ph3-ns">
                         <div className="cf ph2-ns">

@@ -10,7 +10,11 @@ const Wrapper = styled.section`
 
 const HERO_IMAGE = graphql`
     query HeroImage {
-        allImage(filter: { fileName: { eq: "HeroImageRocha.jpg" } }) {
+        allImage(
+            filter: {
+                fileName: { in: ["HeroImageRocha.jpg", "HeroImageRocha2.jpg"] }
+            }
+        ) {
             edges {
                 node {
                     fileName
@@ -28,7 +32,6 @@ const HERO_IMAGE = graphql`
 `
 
 const Hero = () => (
-    // eslint-disable-next-line prettier/prettier
     <StaticQuery 
         query={HERO_IMAGE}
         render={data => {

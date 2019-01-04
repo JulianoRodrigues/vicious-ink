@@ -28,15 +28,16 @@
     "gatsby-transformer-sharp": "^2.1.8",
     "graphcms-image": "^1.1.0-beta4",
     "node-sass": "^4.10.0",
+    "nuka-carousel": "^4.4.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-headroom": "^2.2.4",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.1",
-    "styled-flex-component": "^2.2.2",
     "tachyons": "4.9.1"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^0.1.6",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-loader": "^2.1.1",
