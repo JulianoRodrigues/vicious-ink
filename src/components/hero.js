@@ -39,7 +39,10 @@ export default class Hero extends React.Component {
             render={data => {
                 return (
                     <Wrapper>
-                        <Carousel autoplay={true} autoplayInterval={4000}>
+                        <Carousel 
+                            autoplay={true}
+                            autoplayInterval={4000}
+                            disableKeyboardControls={true}>
 
                             <Img
                                 fluid={
