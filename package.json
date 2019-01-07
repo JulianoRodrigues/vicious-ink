@@ -28,7 +28,6 @@
     "gatsby-transformer-sharp": "^2.1.8",
     "graphcms-image": "^1.1.0-beta4",
     "node-sass": "^4.10.0",
-    "nuka-carousel": "^4.4.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-headroom": "^2.2.4",

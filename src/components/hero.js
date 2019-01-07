@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import Carousel from 'nuka-carousel'
 
 const Wrapper = styled.section`
     position: relative;
@@ -12,12 +11,13 @@ const HERO_IMAGE = graphql`
     query HeroImage {
         allImage(
             filter: {
-                fileName: { in: ["HeroImageRocha.jpg", "HeroImageRocha2.jpg"] }
+                fileName: { eq: "HeroImageRocha.jpg" }
             }
         ) {
             edges {
                 node {
                     fileName
+                    id
                     image {
                         childImageSharp {
                             fluid(maxWidth: 1000) {
@@ -31,36 +31,24 @@ const HERO_IMAGE = graphql`
     }
 `
 
-export default class Hero extends React.Component {
-  render() {
-    return (
-        <StaticQuery 
-            query={HERO_IMAGE}
-            render={data => {
-                return (
-                    <Wrapper>
-                        <Carousel 
-                            autoplay={true}
-                            autoplayInterval={4000}
-                            disableKeyboardControls={true}>
+const Hero = () => (
+    <StaticQuery 
+        query={HERO_IMAGE}
+        render={data => {
+            const heroImage = data.allImage.edges.map(
+                ({ node: { image } }) => image
+            )
+            return (
+                <Wrapper>
+                    <Img
+                        fluid={
+                            heroImage[0].childImageSharp.fluid
+                        }
+                    />
+                </Wrapper>
+            )
+        }}
+    />
+)
 
-                            <Img
-                                fluid={
-                                    data.allImage.edges[0].node.image.childImageSharp.fluid
-                                }
-                            />
-                            <Img
-                                fluid={
-                                    data.allImage.edges[1].node.image.childImageSharp.fluid
-                                }
-                            />
-
-                        </Carousel>
-                    </Wrapper>
-                )
-            }}
-        />
-    );
-  }
-}
-
+export default Hero
