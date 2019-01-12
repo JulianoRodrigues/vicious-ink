@@ -3,13 +3,6 @@ import Headroom from 'react-headroom'
 import Img from 'gatsby-image'
 import { StaticQuery, Link, graphql } from 'gatsby'
 
-/** 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
-library.add(faFacebookF, faInstagram)
-*/
-
 import styled from 'styled-components'
 
 const LogoImage = styled(Img)`

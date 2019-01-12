@@ -6,6 +6,7 @@ import Nav from 'components/navbar'
 import Main from 'components/main'
 import Hero from 'components/hero'
 import Store from 'components/store'
+import Footer from 'components/footer';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
                 <Hero />
                 <Store />
             </Main>
+            <Footer />
         </Layout>
     )
 }
