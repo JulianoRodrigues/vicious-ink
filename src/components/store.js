@@ -14,6 +14,10 @@ const StoreImage = styled(Img)`
     }
 `
 
+const Article = styled.section`
+    padding: 80px 24px 96px;
+`
+
 const Store = () => (
     <StaticQuery
         query={STORE_IMAGE}
@@ -28,21 +32,20 @@ const Store = () => (
                 ({ description }) => description
             )
             return (
-                <article className="pa3">
-                    <h2 className="pa4 f2 fw2 tc gray lh-copy">Our Tattoo Shop</h2>
-                    <section className="dt mw9 center ph3-ns">
-                        <div className="cf ph2-ns">
-                            <div className="dtc-l dtc-m w-100 w-50-ns pa2">
-                                <StoreImage
-                                    fluid={storeImage[0].childImageSharp.fluid}
-                                />
-                            </div>
-                            <div className="dtc-l dtc-m w-100 w-50-ns pa2 v-mid">
-                                <p className="pa2">{description}</p>
-                            </div>
+                <Article className="mw8 center ph3-ns">
+                    <section className="cf ph2-ns">
+                        <div className="fl w-100 w-50-ns pa2">
+                            <StoreImage
+                                fluid={storeImage[0].childImageSharp.fluid}
+                            />
+                        </div>
+                        <div className="fl w-100 w-50-ns pa2">
+                            <h2 className="pa4 f2 fw2 white lh-copy tc">Our Studio</h2>
+                            <p className="pa3">{description}</p>
+                            <p className="pa3">Our staff consistently upgrades their ability and knowledge through training and seminars to ensure your tattoo or piercing is performed using the latest industry standards.</p>
                         </div>
                     </section>
-                </article>
+                </Article>
             )
         }}
     />

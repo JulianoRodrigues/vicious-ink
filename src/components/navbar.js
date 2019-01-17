@@ -31,22 +31,17 @@ const NavBar = () => (
                             </Link>
                             <div className="tc pb3">
                                 <Link to="/home">
-                                    <span className="link dim gray f6 f5-ns dib mr3">
+                                    <span className="link dim white f6 f5-ns dib mr3">
                                         Home
                                     </span>
                                 </Link>
                                 <Link to="/artists">
-                                    <span className="link dim gray f6 f5-ns dib mr3">
+                                    <span className="link dim white f6 f5-ns dib mr3">
                                         Artists
                                     </span>
                                 </Link>
-                                <Link to="/test1">
-                                    <span className="link dim gray f6 f5-ns dib mr3">
-                                        Test1
-                                    </span>
-                                </Link>
                                 <Link to="/contacts">
-                                    <span className="link dim gray f6 f5-ns dib mr3">
+                                    <span className="link dim white f6 f5-ns dib mr3">
                                         Contacts
                                     </span>
                                 </Link>

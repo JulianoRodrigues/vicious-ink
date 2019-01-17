@@ -7,6 +7,7 @@ import Main from 'components/main'
 import Hero from 'components/hero'
 import Store from 'components/store'
 import Footer from 'components/footer';
+import About from '../components/about';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Main>
                 <Hero />
                 <Store />
+                <About />
             </Main>
             <Footer />
         </Layout>
