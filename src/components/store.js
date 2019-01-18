@@ -41,8 +41,8 @@ const Store = () => (
                         </div>
                         <div className="fl w-100 w-50-ns pa2">
                             <h2 className="pa4 f2 fw2 white lh-copy tc">Our Studio</h2>
-                            <p className="pa3">{description}</p>
-                            <p className="pa3">Our staff consistently upgrades their ability and knowledge through training and seminars to ensure your tattoo or piercing is performed using the latest industry standards.</p>
+                            <p className="pa3 b">{description}</p>
+                            <p className="pa3 mid-gray">Our staff consistently upgrades their ability and knowledge through training and seminars to ensure your tattoo or piercing is performed using the latest industry standards.</p>
                         </div>
                     </section>
                 </Article>
