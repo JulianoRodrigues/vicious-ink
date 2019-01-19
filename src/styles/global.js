@@ -5,6 +5,7 @@ import 'tachyons'
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Lato');
     
     html, body, div, span, object,
     h1, h2, h3, h4, h5, h6, p, a,
@@ -24,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #000;
-        font-family: Roboto, Arial, sans-serif;
+        font-family: Lato, Roboto, Helvetica Neue, Arial, sans-serif;;
         font-size: ${remcalc(14)};
         color: #fff;
         letter-spacing: ${remcalc(0.15)};

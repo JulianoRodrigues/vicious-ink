@@ -14,7 +14,7 @@ const StoreImage = styled(Img)`
     }
 `
 
-const Article = styled.section`
+const Section = styled.section`
     padding: 80px 24px 96px;
 `
 
@@ -32,20 +32,24 @@ const Store = () => (
                 ({ description }) => description
             )
             return (
-                <Article className="mw8 center ph3-ns">
-                    <section className="cf ph2-ns">
-                        <div className="fl w-100 w-50-ns pa2">
-                            <StoreImage
-                                fluid={storeImage[0].childImageSharp.fluid}
-                            />
+                <Section className="mw8 center ph3-ns">
+                    <div className="cf ph2-ns">
+                        <div className="fl w-100 w-50-s w-50-l">
+                            <div className="center-m w-50-m">
+                                <StoreImage
+                                    fluid={storeImage[0].childImageSharp.fluid}
+                                />
+                            </div>
                         </div>
-                        <div className="fl w-100 w-50-ns pa2">
-                            <h2 className="pa4 f2 fw2 white lh-copy tc">Our Studio</h2>
-                            <p className="pa3 b">{description}</p>
-                            <p className="pa3 mid-gray">Our staff consistently upgrades their ability and knowledge through training and seminars to ensure your tattoo or piercing is performed using the latest industry standards.</p>
+                        <div className="fl w-100 w-50-s w-50-l">
+                            <div className="center-m w-50-m">
+                                <h2 className="pa4 f2 fw2 white lh-copy tc">Our studio</h2>
+                                <p className="pa3 b">{description}</p>
+                                <p className="pa3 mid-gray">Our staff consistently upgrades their ability and knowledge through training to ensure your tattoo is performed using the latest industry standards.</p>
+                            </div>
                         </div>
-                    </section>
-                </Article>
+                    </div>
+                </Section>
             )
         }}
     />
