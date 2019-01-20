@@ -1,6 +1,43 @@
 import React from 'react'
 import SVGIcon from './svgicon'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
+import { StaticQuery, graphql } from 'gatsby'
+
+const ABOUT_IMAGE = graphql`
+    query AboutImage {
+        allImage(
+            filter: {
+                fileName: { eq: "luis_rocha_about1.jpg" }
+            }
+        ) {
+            edges {
+                node {
+                    fileName
+                    id
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
+
+const StoreImage = styled(Img)`
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+    }
+`
 
 const Section = styled.section`
         padding: 0px 24px 50px;
@@ -52,16 +89,30 @@ const About = () => (
                                                                         <p className="pa1 f3 white center ttu">Portfolio</p>
                                                                 </Flex>
                                                                 <p className="pa3 mid-gray">
-                                                                        For a premium result, at our tattoo salon we combine modern techniques with traditional ones.
+                                                                       Still don't know which tattoo artist do you want? Check our artist's portfolio.                  
                                                                 </p>
                                                         </div>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
-                        <div className="fl w-100 w-50-s w-25-l">
+                        <div className="fl w-25-l">
                                 <div className="center-m w-50-m">
-                                        <p className="pa3 mid-gray"></p>
+                                        <StaticQuery 
+                                                query={ABOUT_IMAGE}
+                                                render={data => {
+                                                const aboutImage = data.allImage.edges.map(
+                                                        ({ node: { image } }) => image
+                                                )
+                                                return (
+                                                        <StoreImage
+                                                                fluid={
+                                                                        aboutImage[0].childImageSharp.fluid
+                                                                }
+                                                        />
+                                                )
+                                                }}
+                                        />
                                 </div>
                         </div>
                 </div>
