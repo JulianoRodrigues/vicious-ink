@@ -60,7 +60,7 @@ const About = () => (
                                                                         <p className="pa1 f3 white center ttu">Tattooing</p>
                                                                 </Flex>
                                                                 <p className="pa3 mid-gray">
-                                                                        For a premium result, at our tattoo salon we combine modern techniques with traditional ones.
+                                                                        For a premium result, at our tattoo studio we combine modern techniques with traditional ones.
                                                                 </p>
                                                         </div>
                                                         <div className="dtc-l pa4">
@@ -77,7 +77,7 @@ const About = () => (
                                                         <div className="dtc-l pa4">
                                                                 <Flex>
                                                                         <SVGIcon name="cover" width={50} height={50} fill="gray" />
-                                                                        <p className="pa1 f3 white center ttu">Tattoo Cover Up</p>
+                                                                        <p className="pa1 f3 white center ttu">Cover Up</p>
                                                                 </Flex>
                                                                 <p className="pa3 mid-gray">
                                                                         Got some old tattoos that you don’t find pretty? Our talented artist will cover them up for you.
