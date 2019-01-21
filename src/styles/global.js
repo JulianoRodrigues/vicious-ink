@@ -34,7 +34,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     footer {
+        position: unset;
+        left: 0;
+        bottom: 0;
         width: 100%;
+        z-index: 0;
     }
 
     ol, ul, li {
