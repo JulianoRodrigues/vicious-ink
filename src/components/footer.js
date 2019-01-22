@@ -24,7 +24,7 @@ const Footer = () => (
         query={SOCIAL_MEDIA}
         render={ data => {
             return (
-                <footer className="pv4 ph3 ph5-ns tc">
+                <footer className="ph3 ph5-ns tc">
                     <span className="link white dib h2 mr3">Follow us:</span>
                     <a className="link white hover-silver dib h2 w2 mr3" href={data.site.siteMetadata.socialMedia[0].url} title={data.site.siteMetadata.socialMedia[0].name}>
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} size="lg"/>

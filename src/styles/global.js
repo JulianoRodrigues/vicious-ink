@@ -30,15 +30,16 @@ const GlobalStyle = createGlobalStyle`
         color: #fff;
         letter-spacing: ${remcalc(0.15)};
         line-height: ${remcalc(20)};
-        height: 100%
     }
 
     footer {
-        position: unset;
-        left: 0;
+        position: fixed;
+        right: 0;
         bottom: 0;
-        width: 100%;
-        z-index: 0;
+        left: 0;
+        padding: 1rem;
+        text-align: center;
+        background-color: #000;
     }
 
     ol, ul, li {
