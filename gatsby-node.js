@@ -2,6 +2,10 @@ const fetch = require('node-fetch')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const path = require('path')
 
+/**
+ * Create image nodes to use gatsby Image plugin
+ */
+
 exports.sourceNodes = async ({
     actions,
     createNodeId,
@@ -89,5 +93,58 @@ exports.onCreateWebpackConfig = ({
       resolve: {
         modules: [path.resolve(__dirname, "src"), "node_modules"],
       },
+    })
+}
+
+/**
+ * Create artist tattoo pages 
+ */
+
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions
+
+    return new Promise((resolve, reject) => {
+        const tattooPhotoTemplate = path.resolve('./src/templates/artist.js')
+
+        //query for the tattoos
+        resolve(
+            graphql(`
+                {
+                    vicious {
+                        artists {
+                            name
+                            id
+                            path
+                            styles
+                            photo {
+                                fileName
+                                url
+                            }
+                            tattoos {
+                                artist {
+                                    name
+                                }
+                                photo {
+                                    id
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+            `
+            ).then((result) => {
+                if (result.errors) {
+                    reject(result.errors)
+                }
+                result.data.vicious.artists.forEach((artist) => {
+                    const path = artist.path
+                    createPage({
+                        path: path,
+                        component: tattooPhotoTemplate
+                    })
+                })
+            })
+        )
     })
 }

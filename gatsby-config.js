@@ -1,4 +1,5 @@
 const config = require('./config/site')
+require("dotenv").config()
 
 module.exports = {
     siteMetadata: {
@@ -12,8 +13,7 @@ module.exports = {
             resolve: 'gatsby-source-graphql',
             options: {
                 fieldName: 'vicious',
-                url:
-                    'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master',
+                url: process.env.GRAPHCMS_URL,
                 typeName: 'ViciousCMS',
                 refetchInterval: 60
             }

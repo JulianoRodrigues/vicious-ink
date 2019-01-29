@@ -35,7 +35,7 @@ const Hero = () => (
     <StaticQuery 
         query={HERO_IMAGE}
         render={data => {
-            const heroImage = data.allImage.edges.map(
+             const heroImage = data.allImage.edges.map(
                 ({ node: { image } }) => image
             )
             return (

@@ -1,10 +1,8 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import theme from '../styles/theme'
-import StaticQuery from '../queries/StaticQuery'
-
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
