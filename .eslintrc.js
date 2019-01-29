@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ["standard"],
+    extends: ["airbnb"],
     plugins: ["standard", "react"],
     rules: {
       "no-var": "error", // optional, recommended when using es6+

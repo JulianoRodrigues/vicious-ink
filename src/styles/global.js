@@ -23,7 +23,13 @@ const GlobalStyle = createGlobalStyle`
         vertical-align: baseline;
     }
 
+    html { 
+        height: 100%; 
+    }
+
     body {
+        position: relative;
+        min-height: 100%;
         background-color: #000;
         font-family: Lato, Roboto, Helvetica Neue, Arial, sans-serif;;
         font-size: ${remcalc(14)};
@@ -33,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     footer {
-        position: fixed;
+        position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
