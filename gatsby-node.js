@@ -41,6 +41,9 @@ exports.sourceNodes = async ({
         ).then(result => result.json()),
         fetch(
             'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={banners{id,photo{id,url,fileName}}}'
+        ).then(result => result.json()),
+        fetch(
+            'https://api-euwest.graphcms.com/v1/cjoefozni7i7i01ght4oymxzy/master?query={artists{id,photo{id,url,fileName}}}'
         ).then(result => result.json())
     ])
 

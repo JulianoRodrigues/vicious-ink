@@ -6,17 +6,17 @@ const Section = styled.section`
 `
 
 const Map = styled.div`
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+    overflow: hidden;
+    padding-bottom: 60%;
+    position: relative;
+    height: 0;
     
     iframe{
-        left:0;
-        top:0;
-        height:100%;
-        width:100%;
-        position:absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
     }
 `
 
@@ -39,7 +39,9 @@ const Address = () => (
                         <h3 className="pa2 f4 fw2 white lh-copy bb">Contacts</h3>
                         <div className="pa2 mr2">
                             <p className="a3 mid-gray">Phone: (+351) 916 726 056</p>
-                            <p className="a3 mid-gray">E-mail: vicious.ink.vc@gmail.com</p>
+                            <p className="a3 mid-gray">E-mail:
+                                <a className="link dim white f6 dib ml2" href="mailto:vicious.ink.vc@gmail.com">vicious.ink.vc@gmail.com</a>
+                            </p>
                         </div>
                     </div>
                 </div>
