@@ -43,9 +43,16 @@ const Store = () => (
                         </div>
                         <div className="fl w-100 w-50-s w-50-l">
                             <div className="center-m w-50-m">
-                                <h2 className="pa4 f2 fw2 white lh-copy tc">Our studio</h2>
+                                <h2 className="pa4 f2 fw2 white lh-copy tc">
+                                    Our studio
+                                </h2>
                                 <p className="pa3 b">{description}</p>
-                                <p className="pa3 mid-gray">Our staff consistently upgrades their ability and knowledge through training to ensure your tattoo is performed using the latest industry standards.</p>
+                                <p className="pa3 mid-gray">
+                                    Our staff consistently upgrades their
+                                    ability and knowledge through training to
+                                    ensure your tattoo is performed using the
+                                    latest industry standards.
+                                </p>
                             </div>
                         </div>
                     </div>

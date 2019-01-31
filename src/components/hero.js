@@ -9,11 +9,7 @@ const Wrapper = styled.section`
 
 const HERO_IMAGE = graphql`
     query HeroImage {
-        allImage(
-            filter: {
-                fileName: { eq: "HeroImageRocha.jpg" }
-            }
-        ) {
+        allImage(filter: { fileName: { eq: "HeroImageRocha.jpg" } }) {
             edges {
                 node {
                     fileName
@@ -32,19 +28,15 @@ const HERO_IMAGE = graphql`
 `
 
 const Hero = () => (
-    <StaticQuery 
+    <StaticQuery
         query={HERO_IMAGE}
         render={data => {
-             const heroImage = data.allImage.edges.map(
+            const heroImage = data.allImage.edges.map(
                 ({ node: { image } }) => image
             )
             return (
                 <Wrapper>
-                    <Img
-                        fluid={
-                            heroImage[0].childImageSharp.fluid
-                        }
-                    />
+                    <Img fluid={heroImage[0].childImageSharp.fluid} />
                 </Wrapper>
             )
         }}
