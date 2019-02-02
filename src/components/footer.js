@@ -6,19 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 library.add(faFacebookF, faInstagram)
 
-const SOCIAL_MEDIA = graphql`
-    query {
-        site {
-            siteMetadata {
-                socialMedia {
-                    url
-                    name
-                }
-            }
-        }
-    }
-`
-
 const Footer = () => (
     <StaticQuery
         query={SOCIAL_MEDIA}
@@ -51,5 +38,18 @@ const Footer = () => (
         }}
     />
 )
+
+const SOCIAL_MEDIA = graphql`
+    query {
+        site {
+            siteMetadata {
+                socialMedia {
+                    url
+                    name
+                }
+            }
+        }
+    }
+`
 
 export default Footer

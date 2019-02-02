@@ -4,26 +4,6 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 
-const ABOUT_IMAGE = graphql`
-    query AboutImage {
-        allImage(filter: { fileName: { eq: "luis_rocha_about1.jpg" } }) {
-            edges {
-                node {
-                    fileName
-                    id
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-`
-
 const StoreImage = styled(Img)`
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -42,7 +22,7 @@ const Flex = styled.div`
     display: flex;
 `
 
-const About = () => {
+const About = props => {
     return (
         <Section className="mw8 center">
             <div className="cf ph2-ns">
@@ -54,6 +34,7 @@ const About = () => {
                         <div className="dt-l dt--fixed">
                             <div className="dt-row-l">
                                 <div className="dtc-l pa4-l pa3-m">
+                                {props && props.svg}
                                     <Flex>
                                         <SVGIcon
                                             name="machine"
@@ -153,5 +134,25 @@ const About = () => {
         </Section>
     )
 }
+
+const ABOUT_IMAGE = graphql`
+    query AboutImage {
+        allImage(filter: { fileName: { eq: "luis_rocha_about1.jpg" } }) {
+            edges {
+                node {
+                    fileName
+                    id
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default About

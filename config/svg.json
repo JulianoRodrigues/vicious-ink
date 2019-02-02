@@ -1,0 +1,22 @@
+[
+    {
+        "tittle": "Tattooing",
+        "icon": "machine",
+        "description": "For a premium result, at our tattoo studio we combine modern techniques with traditional ones."
+    },
+    {
+        "tittle": "Custom Design",
+        "icon": "design",
+        "description": "Nothing can beat the challenge of creating a design that initially is only in your imagination."
+    },
+    {
+        "tittle": "Cover Up",
+        "icon": "cover",
+        "description": "Got some old tattoos that you don’t find pretty? Our talented artist will cover them up for you."
+    },
+    {
+        "tittle": "Portfolio",
+        "icon": "portfolio",
+        "description": "Still don't know which tattoo artist do you want? Check our artist's portfolio.Got some old tattoos that you don’t find pretty? Our talented artist will cover them up for you."
+    }
+]

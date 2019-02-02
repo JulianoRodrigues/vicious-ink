@@ -55,8 +55,6 @@ const Artists = ({ data: { vicious, allImage } }) => {
     )
 }
 
-export default Artists
-
 export const ALL_ARTISTS = graphql`
     query {
         vicious {
@@ -84,3 +82,5 @@ export const ALL_ARTISTS = graphql`
         }
     }
 `
+
+export default Artists

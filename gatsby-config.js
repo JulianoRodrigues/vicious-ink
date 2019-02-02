@@ -18,6 +18,13 @@ module.exports = {
                 refetchInterval: 60
             }
         },
+        'gatsby-transformer-json',
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/config`
+            }
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {

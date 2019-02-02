@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby';
 
 import Layout from 'layouts/layout'
 import Nav from 'components/navbar'
@@ -9,7 +10,7 @@ import Store from 'components/store'
 import Footer from 'components/footer'
 import About from '../components/about'
 
-const Home = () => {
+const Home = ({ data }) => {
     return (
         <Layout>
             <Helmet title={'Home - Vicious Ink'} />
@@ -17,11 +18,25 @@ const Home = () => {
             <Main>
                 <Hero />
                 <Store />
-                <About />
+                <About svg={data} />
             </Main>
             <Footer />
         </Layout>
     )
 }
+
+export const SVG = graphql`
+    query SVG {
+        allSvgJson {
+            edges {
+                node {
+                    tittle
+                    description
+                    icon
+                }
+            }
+        }
+    }
+`
 
 export default Home

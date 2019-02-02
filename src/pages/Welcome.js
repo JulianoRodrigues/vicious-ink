@@ -35,20 +35,6 @@ const TextContainer = styled.div`
     }
 `
 
-// QUERY
-const WELCOME_IMAGE = graphql`
-    query WelcomeImage {
-        bannerImage: file(relativePath: { eq: "banner.png" }) {
-            childImageSharp {
-                fluid(maxWidth: 1000) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`
-
-// eslint-disable-next-line react/prop-types
 const Welcome = () => (
     <StaticQuery
         query={WELCOME_IMAGE}
@@ -68,5 +54,18 @@ const Welcome = () => (
         }}
     />
 )
+
+// QUERY
+const WELCOME_IMAGE = graphql`
+    query WelcomeImage {
+        bannerImage: file(relativePath: { eq: "banner.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 1000) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`
 
 export default Welcome

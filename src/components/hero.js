@@ -7,6 +7,22 @@ const Wrapper = styled.section`
     position: relative;
 `
 
+const Hero = () => (
+    <StaticQuery
+        query={HERO_IMAGE}
+        render={data => {
+            const heroImage = data.allImage.edges.map(
+                ({ node: { image } }) => image
+            )
+            return (
+                <Wrapper>
+                    <Img fluid={heroImage[0].childImageSharp.fluid} />
+                </Wrapper>
+            )
+        }}
+    />
+)
+
 const HERO_IMAGE = graphql`
     query HeroImage {
         allImage(filter: { fileName: { eq: "HeroImageRocha.jpg" } }) {
@@ -26,21 +42,5 @@ const HERO_IMAGE = graphql`
         }
     }
 `
-
-const Hero = () => (
-    <StaticQuery
-        query={HERO_IMAGE}
-        render={data => {
-            const heroImage = data.allImage.edges.map(
-                ({ node: { image } }) => image
-            )
-            return (
-                <Wrapper>
-                    <Img fluid={heroImage[0].childImageSharp.fluid} />
-                </Wrapper>
-            )
-        }}
-    />
-)
 
 export default Hero
