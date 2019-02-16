@@ -23,13 +23,13 @@ const Store = () => (
         query={STORE_IMAGE}
         render={data => {
             //Deconstruct store image(s)
-            const storeImage = data.allImage.edges.map(
-                ({ node: { image } }) => image
+            const storeImage = data.allContentfulStore.edges.map(
+                ({ node: { photo } }) => photo
             )
 
             //Deconstruct store description
-            const description = data.vicious.stores.map(
-                ({ description }) => description
+            const description = data.allContentfulStore.edges.map(
+                ({ node: { childContentfulStoreDescriptionTextNode } }) => childContentfulStoreDescriptionTextNode.description
             )
             return (
                 <Section className="mw8 center ph3-ns">
@@ -37,7 +37,7 @@ const Store = () => (
                         <div className="fl w-100 w-50-s w-50-l">
                             <div className="center-m w-50-m">
                                 <StoreImage
-                                    fluid={storeImage[0].childImageSharp.fluid}
+                                    fluid={storeImage[0].fluid}
                                 />
                             </div>
                         </div>
@@ -64,23 +64,19 @@ const Store = () => (
 
 const STORE_IMAGE = graphql`
     query Store {
-        allImage(filter: { fileName: { eq: "storefront.jpg" } }) {
+        allContentfulStore {
             edges {
                 node {
-                    fileName
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
+                    id
+                    childContentfulStoreDescriptionTextNode {
+                        description
+                    }
+                    photo {
+                        fluid {
+                            ...GatsbyContentfulFluid
                         }
                     }
                 }
-            }
-        }
-        vicious {
-            stores {
-                description
             }
         }
     }

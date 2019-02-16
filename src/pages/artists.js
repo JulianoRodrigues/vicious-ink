@@ -24,7 +24,7 @@ const ArtistImage = styled(Img)`
     }
 `
 
-const Artists = ({ data: { vicious, allImage } }) => {
+const Artists = ({ data: { allContentfulArtist } }) => {
     return (
         <Layout>
             <Helmet title={'Artists - Vicious Ink'} />
@@ -34,14 +34,13 @@ const Artists = ({ data: { vicious, allImage } }) => {
                     <div className="cf ph2-ns">
                         <div className="fl w-100 l w-100 w-50-s w-25-l">
                             <div className="w-100">
-                                {allImage &&
-                                    allImage.edges.map(
-                                        ({ node: { image } }) => (
+                                {allContentfulArtist &&
+                                    allContentfulArtist.edges.map(({ node }) => (
                                             <ArtistImage
+                                                key={node.id}
                                                 fluid={
-                                                    image.childImageSharp.fluid
+                                                    node.photo.fluid
                                                 }
-                                                key="cenas"
                                             />
                                         )
                                     )}
@@ -56,26 +55,23 @@ const Artists = ({ data: { vicious, allImage } }) => {
 }
 
 export const ALL_ARTISTS = graphql`
-    query {
-        vicious {
-            artists {
-                id
-                name
-                bio
-                styles
-            }
-        }
-        allImage(filter: { fileName: { eq: "LuisRocha.jpg" } }) {
+    query Artists {
+        allContentfulArtist {
             edges {
                 node {
-                    fileName
                     id
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
+                    name
+                    path
+                    photo {
+                        fluid {
+                            ...GatsbyContentfulFluid
                         }
+                    }
+                    childContentfulArtistStylesTextNode {
+                        styles
+                    }
+                    childContentfulArtistBioTextNode {
+                        bio
                     }
                 }
             }

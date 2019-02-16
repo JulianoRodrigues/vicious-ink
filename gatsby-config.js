@@ -10,13 +10,11 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
-            resolve: 'gatsby-source-graphql',
+            resolve: `gatsby-source-contentful`,
             options: {
-                fieldName: 'vicious',
-                url: process.env.GRAPHCMS_URL,
-                typeName: 'ViciousCMS',
-                refetchInterval: 60
-            }
+              spaceId: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: process.env.CONTENTFUL_API_TOKEN
+            },
         },
         'gatsby-transformer-json',
         {

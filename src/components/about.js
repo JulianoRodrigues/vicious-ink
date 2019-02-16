@@ -34,7 +34,6 @@ const About = props => {
                         <div className="dt-l dt--fixed">
                             <div className="dt-row-l">
                                 <div className="dtc-l pa4-l pa3-m">
-                                {props && props.svg}
                                     <Flex>
                                         <SVGIcon
                                             name="machine"
@@ -116,13 +115,13 @@ const About = props => {
                         <StaticQuery
                             query={ABOUT_IMAGE}
                             render={data => {
-                                const aboutImage = data.allImage.edges.map(
-                                    ({ node: { image } }) => image
+                                const aboutImage = data.allContentfulImage.edges.map(
+                                    ({ node: { photo } }) => photo
                                 )
                                 return (
                                     <StoreImage
                                         fluid={
-                                            aboutImage[0].childImageSharp.fluid
+                                            aboutImage[0].fluid
                                         }
                                     />
                                 )
@@ -137,17 +136,14 @@ const About = props => {
 
 const ABOUT_IMAGE = graphql`
     query AboutImage {
-        allImage(filter: { fileName: { eq: "luis_rocha_about1.jpg" } }) {
+        allContentfulImage(filter: { name: { eq: "About" } }) {
             edges {
                 node {
-                    fileName
-                    id
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
-                        }
+                    name
+                    photo {  
+                        fluid (maxWidth: 1000){
+                            ...GatsbyContentfulFluid
+                        } 
                     }
                 }
             }

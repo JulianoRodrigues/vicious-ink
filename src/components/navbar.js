@@ -14,7 +14,9 @@ const NavBar = () => (
     <StaticQuery
         query={LOGO_IMAGE}
         render={data => {
-            const { allImage } = data
+            const logo = data.allContentfulImage.edges.map(
+                ({ node: { photo } }) => photo
+            )
             return (
                 <Headroom disableInlineStyles>
                     <header>
@@ -23,8 +25,7 @@ const NavBar = () => (
                                 <span className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
                                     <LogoImage
                                         fluid={
-                                            allImage.edges[0].node.image
-                                                .childImageSharp.fluid
+                                            logo[0].fluid
                                         }
                                     />
                                 </span>
@@ -56,20 +57,18 @@ const NavBar = () => (
 
 const LOGO_IMAGE = graphql`
     query LogoImage {
-        allImage(filter: { fileName: { eq: "image.png" } }) {
+        allContentfulImage (filter: { name: { eq: "Logo" } }){
             edges {
                 node {
-                    fileName
-                    image {
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid
-                            }
+                    name
+                    photo {
+                        fluid {
+                            ...GatsbyContentfulFluid
                         }
                     }
                 }
             }
-        }
+        } 
     }
 `
 
