@@ -21,7 +21,7 @@ exports.onCreateWebpackConfig = ({
  * Create artist tattoo pages 
  */
 
-exports.createPages = ({ graphql, actions }) => {
+/** exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
     return new Promise((resolve, reject) => {
@@ -68,4 +68,4 @@ exports.createPages = ({ graphql, actions }) => {
             })
         )
     })
-}
+}*/
