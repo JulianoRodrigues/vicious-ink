@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import theme from '../styles/theme'
+import theme from './theme'
+import Img from 'gatsby-image'
+import remcalc from 'remcalc'
 
 export const Links = styled(Link)`
     text-decoration: none;
@@ -21,5 +23,17 @@ export const Links = styled(Link)`
         -webkit-transform: scale(0.9);
         -moz-transform: scale(0.9);
         transform: scale(0.9);
+    }
+`
+
+export const Image = styled(Img)`
+    border-radius: ${remcalc(10)};
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
     }
 `

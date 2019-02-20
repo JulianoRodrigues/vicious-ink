@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import theme from '../styles/theme'
+import { Image } from '../styles/base'
 
 import Layout from 'layouts/layout'
 import Nav from 'components/navbar'
@@ -15,15 +15,21 @@ const Section = styled.section`
     padding: 0px 24px 50px;
 `
 
-const ArtistImage = styled(Img)`
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    &:hover {
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0);
-    }
+const ArtistGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(24,1fr);
+    grid-row-gap: ${remcalc(125)};
+`
+
+const ArtistCard = styled.article`
+    grid-column: 3 / span 20;
+    display: flex;
+    margin: 0;
+`
+
+const ArtistInfo = styled.div`
+    display: grid;
+    flex-direction: column;
 `
 
 const Artists = ({ data: { allContentfulArtist } }) => {
@@ -34,18 +40,27 @@ const Artists = ({ data: { allContentfulArtist } }) => {
             <Main>
                 <Section className="mw9 center">
                     <div className="cf ph2-ns">                        
-                        <div className="fl w-100 w-50-s w-25-l">
+                        <div className="fl w-100">
                             <div className="w-100">
-                                {allContentfulArtist &&
-                                    allContentfulArtist.edges.map(({ node }) => (
-                                            <ArtistImage
-                                                key={node.id}
-                                                fluid={
-                                                    node.photo.fluid
-                                                }
-                                            />
+                                <ArtistGrid>
+                                    {allContentfulArtist &&
+                                        allContentfulArtist.edges.map(({ node }) => (
+                                            <ArtistCard key={node.id}>
+                                                <Image
+                                                    alt={node.name}  
+                                                    fixed={
+                                                        node.photo.fixed
+                                                    }
+                                                />
+                                                <ArtistInfo className="ml4 w-60">
+                                                    <h2 className="f3 fw3 white lh-copy">{node.name}</h2>
+                                                    <p className="mt2 mb2 mid-gray">{node.childContentfulArtistBioTextNode.bio}</p>
+                                                    <p className="mt4 white bold">Styles: <span className="gray">{node.childContentfulArtistStylesTextNode.styles}</span></p>
+                                                </ArtistInfo>
+                                            </ArtistCard>
                                         )
                                     )}
+                                </ArtistGrid>
                             </div>
                         </div>
                     </div>
@@ -65,8 +80,8 @@ export const ALL_ARTISTS = graphql`
                     name
                     path
                     photo {
-                        fluid {
-                            ...GatsbyContentfulFluid
+                        fixed (width: 300, height: 300) {
+                            ...GatsbyContentfulFixed
                         }
                     }
                     childContentfulArtistStylesTextNode {

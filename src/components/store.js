@@ -1,18 +1,8 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { Image } from '../styles/base'
 import styled from 'styled-components'
 
-const StoreImage = styled(Img)`
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    &:hover {
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0);
-    }
-`
 
 const Section = styled.section`
     padding: 80px 24px 96px;
@@ -36,7 +26,7 @@ const Store = () => (
                     <div className="cf ph2-ns">
                         <div className="fl w-100 w-50-s w-50-l">
                             <div className="center-m w-50-m">
-                                <StoreImage
+                                <Image
                                     fluid={storeImage[0].fluid}
                                 />
                             </div>

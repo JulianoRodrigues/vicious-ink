@@ -3,17 +3,7 @@ import SVGIcon from './svgicon'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
-
-const StoreImage = styled(Img)`
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    &:hover {
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0);
-    }
-`
+import { Image } from '../styles/base'
 
 const Section = styled.section`
     padding: 0px 24px 50px;
@@ -119,7 +109,7 @@ const About = props => {
                                     ({ node: { photo } }) => photo
                                 )
                                 return (
-                                    <StoreImage
+                                    <Image
                                         fluid={
                                             aboutImage[0].fluid
                                         }

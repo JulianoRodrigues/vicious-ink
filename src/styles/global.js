@@ -39,13 +39,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     footer {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        position: relative;
         padding: 1rem;
         text-align: center;
-        background-color: #000;
     }
 
     ol, ul, li {
