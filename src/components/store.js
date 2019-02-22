@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby'
 import { Image } from '../styles/base'
 import styled from 'styled-components'
 
-
 const Section = styled.section`
     padding: 80px 24px 96px;
 `
@@ -19,16 +18,15 @@ const Store = () => (
 
             //Deconstruct store description
             const description = data.allContentfulStore.edges.map(
-                ({ node: { childContentfulStoreDescriptionTextNode } }) => childContentfulStoreDescriptionTextNode.description
+                ({ node: { childContentfulStoreDescriptionTextNode } }) =>
+                    childContentfulStoreDescriptionTextNode.description
             )
             return (
                 <Section className="mw8 center ph3-ns">
                     <div className="cf ph2-ns">
                         <div className="fl w-100 w-50-s w-50-l">
                             <div className="center-m w-50-m">
-                                <Image
-                                    fluid={storeImage[0].fluid}
-                                />
+                                <Image fluid={storeImage[0].fluid} />
                             </div>
                         </div>
                         <div className="fl w-100 w-50-s w-50-l">

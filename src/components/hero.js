@@ -25,7 +25,7 @@ const Hero = () => (
 
 const HERO_IMAGE = graphql`
     query HeroImage {
-        allContentfulImage (filter: { name: { eq: "Hero" } }){
+        allContentfulImage(filter: { name: { eq: "Hero" } }) {
             edges {
                 node {
                     name
@@ -36,7 +36,7 @@ const HERO_IMAGE = graphql`
                     }
                 }
             }
-        } 
+        }
     }
 `
 

@@ -17,14 +17,38 @@ const Section = styled.section`
 
 const ArtistGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(24,1fr);
-    grid-row-gap: ${remcalc(125)};
+    grid-template-columns: 100%;
+    grid-row-gap: 8rem;
+
+    @media (min-width: 48em) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-row-gap: ${remcalc(125)};
+        grid-column-gap: 2rem;
+    }
+
+    @media (min-width: 90em) {
+        grid-template-columns: repeat(24, 1fr);
+    }
 `
 
 const ArtistCard = styled.article`
-    grid-column: 3 / span 20;
     display: flex;
     margin: 0;
+
+    @media (min-width: 48em) {
+        grid-column: 2 / span 10;
+    }
+
+    @media (max-width: 48em) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    @media (min-width: 90em) {
+        grid-column: 3 / span 20;
+    }
 `
 
 const ArtistInfo = styled.div`
@@ -39,27 +63,43 @@ const Artists = ({ data: { allContentfulArtist } }) => {
             <Nav />
             <Main>
                 <Section className="mw9 center">
-                    <div className="cf ph2-ns">                        
+                    <div className="cf ph2-ns">
                         <div className="fl w-100">
                             <div className="w-100">
                                 <ArtistGrid>
                                     {allContentfulArtist &&
-                                        allContentfulArtist.edges.map(({ node }) => (
-                                            <ArtistCard key={node.id}>
-                                                <Image
-                                                    alt={node.name}  
-                                                    fixed={
-                                                        node.photo.fixed
-                                                    }
-                                                />
-                                                <ArtistInfo className="ml4 w-60">
-                                                    <h2 className="f3 fw3 white lh-copy">{node.name}</h2>
-                                                    <p className="mt2 mb2 mid-gray">{node.childContentfulArtistBioTextNode.bio}</p>
-                                                    <p className="mt4 white bold">Styles: <span className="gray">{node.childContentfulArtistStylesTextNode.styles}</span></p>
-                                                </ArtistInfo>
-                                            </ArtistCard>
-                                        )
-                                    )}
+                                        allContentfulArtist.edges.map(
+                                            ({ node }) => (
+                                                <ArtistCard key={node.id}>
+                                                    <Image
+                                                        alt={node.name}
+                                                        fixed={node.photo.fixed}
+                                                    />
+                                                    <ArtistInfo className="ma3-l ma3-m w-60-l w-60-m">
+                                                        <h2 className="f3 fw3 white lh-copy">
+                                                            {node.name}
+                                                        </h2>
+                                                        <p className="mt2 mb2 mid-gray">
+                                                            {
+                                                                node
+                                                                    .childContentfulArtistBioTextNode
+                                                                    .bio
+                                                            }
+                                                        </p>
+                                                        <p className="mt2 white bold">
+                                                            Styles:{' '}
+                                                            <span className="gray">
+                                                                {
+                                                                    node
+                                                                        .childContentfulArtistStylesTextNode
+                                                                        .styles
+                                                                }
+                                                            </span>
+                                                        </p>
+                                                    </ArtistInfo>
+                                                </ArtistCard>
+                                            )
+                                        )}
                                 </ArtistGrid>
                             </div>
                         </div>
@@ -80,7 +120,7 @@ export const ALL_ARTISTS = graphql`
                     name
                     path
                     photo {
-                        fixed (width: 300, height: 300) {
+                        fixed(width: 300, height: 300) {
                             ...GatsbyContentfulFixed
                         }
                     }

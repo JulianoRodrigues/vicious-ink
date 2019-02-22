@@ -23,11 +23,7 @@ const NavBar = () => (
                         <nav className="pa3 pa3-ns">
                             <Link to="/home">
                                 <span className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
-                                    <LogoImage
-                                        fluid={
-                                            logo[0].fluid
-                                        }
-                                    />
+                                    <LogoImage fluid={logo[0].fluid} />
                                 </span>
                             </Link>
                             <div className="tc pb3">
@@ -57,7 +53,7 @@ const NavBar = () => (
 
 const LOGO_IMAGE = graphql`
     query LogoImage {
-        allContentfulImage (filter: { name: { eq: "Logo" } }){
+        allContentfulImage(filter: { name: { eq: "Logo" } }) {
             edges {
                 node {
                     name
@@ -68,7 +64,7 @@ const LOGO_IMAGE = graphql`
                     }
                 }
             }
-        } 
+        }
     }
 `
 

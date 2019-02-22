@@ -108,13 +108,7 @@ const About = props => {
                                 const aboutImage = data.allContentfulImage.edges.map(
                                     ({ node: { photo } }) => photo
                                 )
-                                return (
-                                    <Image
-                                        fluid={
-                                            aboutImage[0].fluid
-                                        }
-                                    />
-                                )
+                                return <Image fluid={aboutImage[0].fluid} />
                             }}
                         />
                     </div>
@@ -130,10 +124,10 @@ const ABOUT_IMAGE = graphql`
             edges {
                 node {
                     name
-                    photo {  
-                        fluid (maxWidth: 1000){
+                    photo {
+                        fluid(maxWidth: 1000) {
                             ...GatsbyContentfulFluid
-                        } 
+                        }
                     }
                 }
             }

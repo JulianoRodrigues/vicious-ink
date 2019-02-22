@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby';
+import { graphql } from 'gatsby'
 
 import Layout from 'layouts/layout'
 import Nav from 'components/navbar'

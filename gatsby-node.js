@@ -21,6 +21,7 @@ exports.onCreateWebpackConfig = ({
  * Create artist tattoo pages 
  */
 
+
 /** exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
@@ -30,40 +31,28 @@ exports.onCreateWebpackConfig = ({
         //query for the tattoos
         resolve(
             graphql(`
-                {
-                    vicious {
-                        artists {
-                            name
-                            id
+            {
+                allContentfulArtist {
+                    edges {
+                        node {
                             path
-                            styles
-                            photo {
-                                fileName
-                                url
-                            }
                             tattoos {
-                                artist {
-                                    name
-                                }
                                 photo {
                                     id
-                                    url
                                 }
                             }
                         }
                     }
                 }
+            }
             `
             ).then((result) => {
+                console.log(result);
                 if (result.errors) {
                     reject(result.errors)
                 }
-                result.data.vicious.artists.forEach((artist) => {
-                    const path = artist.path
-                    createPage({
-                        path: path,
-                        component: tattooPhotoTemplate
-                    })
+                result.data.allContentfulArtist.edges.forEach(({ node }) => {
+                    console.log(node);
                 })
             })
         )
