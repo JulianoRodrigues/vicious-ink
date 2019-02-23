@@ -22,11 +22,11 @@ exports.onCreateWebpackConfig = ({
  */
 
 
-/** exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
     return new Promise((resolve, reject) => {
-        const tattooPhotoTemplate = path.resolve('./src/templates/artist.js')
+        const artistWorkTemplate = path.resolve('./src/templates/artistWork.js')
 
         //query for the tattoos
         resolve(
@@ -36,25 +36,27 @@ exports.onCreateWebpackConfig = ({
                     edges {
                         node {
                             path
-                            tattoos {
-                                photo {
-                                    id
-                                }
-                            }
+                            name
                         }
                     }
                 }
             }
             `
             ).then((result) => {
-                console.log(result);
                 if (result.errors) {
                     reject(result.errors)
                 }
                 result.data.allContentfulArtist.edges.forEach(({ node }) => {
-                    console.log(node);
+                    const artistName = node.name
+                    createPage({
+                        path: node.path,
+                        component: artistWorkTemplate,
+                        context: {
+                            artistName
+                        }
+                    })
                 })
             })
         )
     })
-}*/
+}

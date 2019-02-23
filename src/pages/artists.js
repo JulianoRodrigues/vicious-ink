@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Img from 'gatsby-image'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -96,6 +95,11 @@ const Artists = ({ data: { allContentfulArtist } }) => {
                                                                 }
                                                             </span>
                                                         </p>
+                                                        <Link to={node.path}>
+                                                            <span className="link dim white f6 f5-ns dib mr3">
+                                                                See tattoos
+                                                            </span>
+                                                        </Link>
                                                     </ArtistInfo>
                                                 </ArtistCard>
                                             )
