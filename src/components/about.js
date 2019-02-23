@@ -1,7 +1,6 @@
 import React from 'react'
 import SVGIcon from './svgicon'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 import { Image } from '../styles/base'
 
@@ -119,13 +118,13 @@ const About = props => {
 }
 
 const ABOUT_IMAGE = graphql`
-    query AboutImage {
+    query AboutPage {
         allContentfulImage(filter: { name: { eq: "About" } }) {
             edges {
                 node {
                     name
                     photo {
-                        fluid(maxWidth: 1000) {
+                        fluid {
                             ...GatsbyContentfulFluid
                         }
                     }

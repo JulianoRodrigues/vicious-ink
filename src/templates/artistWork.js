@@ -10,7 +10,7 @@ import Nav from 'components/navbar'
 import Main from 'components/main'
 import Footer from 'components/footer'
 
-const Article = styled.article`
+const Section = styled.section`
     padding: 0px 24px 50px;
 `
 
@@ -36,7 +36,7 @@ export default ({ data: { allContentfulArtist } }) => {
             <Helmet title={allContentfulArtist.edges[0].node.name}/>
             <Nav/>
             <Main>
-                <Article className="mw9 center">
+                <Section className="mw9 center">
                     <div className="cf ph2-ns">
                         <div className="fl w-100">
                             <div className="w-100">
@@ -52,7 +52,7 @@ export default ({ data: { allContentfulArtist } }) => {
                             </div>
                         </div>
                     </div>
-                </Article>
+                </Section>
             </Main>
             <Footer/>
         </Layout>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Article = styled.article`
+const Section = styled.section`
     padding: 0px 24px 50px;
 `
 
@@ -21,7 +21,7 @@ const Map = styled.div`
 `
 
 const Address = () => (
-    <Article className="mw9 center">
+    <Section className="mw9 center">
         <div className="cf ph2-ns">
             <div className="fl w-100 l w-100 w-50-s w-25-l">
                 <div className="w-100">
@@ -77,7 +77,7 @@ const Address = () => (
                 </div>
             </div>
         </div>
-    </Article>
+    </Section>
 )
 
 export default Address
