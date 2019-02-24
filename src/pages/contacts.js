@@ -10,7 +10,7 @@ import Address from '../components/address'
 const Contacts = () => {
     return (
         <Layout>
-            <Helmet title={'Contacts'} />
+            <Helmet title={'Contacts - Vicious Ink'} />
             <Nav />
             <Main>
                 <Address />
