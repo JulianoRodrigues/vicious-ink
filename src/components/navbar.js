@@ -21,15 +21,15 @@ const NavBar = () => (
                 <Headroom disableInlineStyles>
                     <header>
                         <nav className="pa3 pa3-ns">
-                            <Link to="/home">
+                            <Link to="/studio">
                                 <span className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
                                     <LogoImage fluid={logo[0].fluid} />
                                 </span>
                             </Link>
                             <div className="tc pb3">
-                                <Link to="/home">
+                                <Link to="/studio">
                                     <span className="link dim white f6 f5-ns dib mr3">
-                                        Home
+                                        Studio
                                     </span>
                                 </Link>
                                 <Link to="/artists">

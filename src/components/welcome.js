@@ -43,7 +43,7 @@ const Welcome = () => (
                 <Wrapper>
                     <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
                     <TextContainer>
-                        <Link to="/home">
+                        <Link to="/studio">
                             <span className="link dim gray b f1 tc db mb3 mb4-ns">
                                 Enter
                             </span>
