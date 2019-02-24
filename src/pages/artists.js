@@ -58,7 +58,7 @@ const ArtistInfo = styled.div`
 const Artists = ({ data: { allContentfulArtist } }) => {
     return (
         <Layout>
-            <Helmet title={'Artists - Vicious Ink'} />
+            <Helmet title={'Artists'} />
             <Nav />
             <Main>
                 <Section className="mw9 center">

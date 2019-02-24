@@ -13,7 +13,7 @@ import About from '../components/about'
 const Home = ({ data }) => {
     return (
         <Layout>
-            <Helmet title={'Home - Vicious Ink'} />
+            <Helmet title={'Home'} />
             <Nav />
             <Main>
                 <Hero />
