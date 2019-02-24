@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Image } from '../styles/base'
 
-import Layout from 'layouts/layout'
-import Nav from 'components/navbar'
-import Main from 'components/main'
-import Footer from 'components/footer'
+import Layout from '../layouts/layout'
+import Nav from '../components/navbar'
+import Main from '../components/main'
+import Footer from '../components/footer'
 
 const Section = styled.section`
     padding: 0px 24px 50px;

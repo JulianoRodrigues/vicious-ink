@@ -1,5 +1,5 @@
 import React from 'react'
-import SVGIcon from './svgicon'
+import SVGIcon from '../components/svgicon'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Image } from '../styles/base'
