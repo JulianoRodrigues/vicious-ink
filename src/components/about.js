@@ -11,7 +11,7 @@ const Flex = styled.div`
     display: flex;
 `
 
-const About = props => {
+const About = () => {
     return (
         <Section className="mw8 center">
             <div className="cf ph2-ns">

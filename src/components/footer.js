@@ -33,6 +33,9 @@ const Footer = () => (
                             size="lg"
                         />
                     </a>
+                    <p className="mid-gray">
+                        Copyright © 2019 Vicious Ink Tattoo Shop. All rights reserved.
+                    </p>
                 </footer>
             )
         }}

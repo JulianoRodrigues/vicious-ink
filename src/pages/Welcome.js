@@ -60,7 +60,7 @@ const WELCOME_IMAGE = graphql`
     query WelcomeImage {
         bannerImage: file(relativePath: { eq: "banner.png" }) {
             childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid {
                     ...GatsbyImageSharpFluid
                 }
             }
