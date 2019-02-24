@@ -1,13 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../layouts/layout'
-import Home from '../pages/home'
+import Welcome from '../components/welcome'
 
 const Index = () => {
     return (
         <Layout>
             <Helmet title={'Vicious Ink'} />
-            <Home />
+            <Welcome />
         </Layout>
     )
 }
