@@ -2,6 +2,7 @@
   "name": "vicious-ink",
   "description": "Vicious Ink Tattoo Shop",
   "license": "MIT",
+  "version": "1.0.0",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
