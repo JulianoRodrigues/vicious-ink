@@ -11,7 +11,12 @@ const Flex = styled.div`
     display: flex;
 `
 
-const About = () => {
+const About = props => {
+    const svgIconsArray = props.svg.allSvgJson.edges.map(( icon ) => {
+        return icon;
+    });
+    const svgIconsLeft = svgIconsArray.splice(2, 2);
+    console.log(svgIconsLeft)
     return (
         <Section className="mw8 center">
             <div className="cf ph2-ns">
@@ -22,79 +27,44 @@ const About = () => {
                         </h2>
                         <div className="dt-l dt--fixed">
                             <div className="dt-row-l">
-                                <div className="dtc-l pa4-l pa3-m">
-                                    <Flex>
-                                        <SVGIcon
-                                            name="machine"
-                                            width={50}
-                                            height={50}
-                                            fill="gray"
-                                        />
-                                        <p className="pa1 f3 white center ttu tc">
-                                            Tattooing
+                                {svgIconsArray && svgIconsArray.map(({ node }) => (
+                                    <div key={node.icon} className="dtc-l pa4-l pa3-m">
+                                        <Flex>
+                                            <SVGIcon
+                                                name={node.icon}
+                                                width={50}
+                                                height={50}
+                                                fill="gray"
+                                            />
+                                            <p className="pa1 f3 white center ttu tc">
+                                                {node.tittle}
+                                            </p>
+                                        </Flex>
+                                        <p className="pa3 mid-gray">
+                                            {node.description}
                                         </p>
-                                    </Flex>
-                                    <p className="pa3 mid-gray">
-                                        For a premium result, at our tattoo
-                                        studio we combine modern techniques with
-                                        traditional ones.
-                                    </p>
-                                </div>
-                                <div className="dtc-l pa4-l pa3-m">
-                                    <Flex>
-                                        <SVGIcon
-                                            name="design"
-                                            width={50}
-                                            height={50}
-                                            fill="gray"
-                                        />
-                                        <p className="pa1 f3 white center ttu tc">
-                                            Custom Design
-                                        </p>
-                                    </Flex>
-                                    <p className="pa3 mid-gray">
-                                        Nothing can beat the challenge of
-                                        creating a design that initially is only
-                                        in your imagination.
-                                    </p>
-                                </div>
+                                    </div>
+                                ))}
                             </div>
                             <div className="dt-row-l">
-                                <div className="dtc-l pa4-l pa3-m">
-                                    <Flex>
-                                        <SVGIcon
-                                            name="cover"
-                                            width={50}
-                                            height={50}
-                                            fill="gray"
-                                        />
-                                        <p className="pa1 f3 white center ttu tc">
-                                            Cover Up
+                                {svgIconsLeft && svgIconsLeft.map(({ node }) => (
+                                    <div key={node.icon} className="dtc-l pa4-l pa3-m">
+                                        <Flex>
+                                            <SVGIcon
+                                                name={node.icon}
+                                                width={50}
+                                                height={50}
+                                                fill="gray"
+                                            />
+                                            <p className="pa1 f3 white center ttu tc">
+                                                {node.tittle}
+                                            </p>
+                                        </Flex>
+                                        <p className="pa3 mid-gray">
+                                            {node.description}
                                         </p>
-                                    </Flex>
-                                    <p className="pa3 mid-gray">
-                                        Got some old tattoos that you don’t find
-                                        pretty? Our talented artist will cover
-                                        them up for you.
-                                    </p>
-                                </div>
-                                <div className="dtc-l pa4-l pa3-m">
-                                    <Flex>
-                                        <SVGIcon
-                                            name="portfolio"
-                                            width={50}
-                                            height={50}
-                                            fill="gray"
-                                        />
-                                        <p className="pa1 f3 white center ttu tc">
-                                            Portfolio
-                                        </p>
-                                    </Flex>
-                                    <p className="pa3 mid-gray">
-                                        Still don't know which tattoo artist do
-                                        you want? Check our artist's portfolio.
-                                    </p>
-                                </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

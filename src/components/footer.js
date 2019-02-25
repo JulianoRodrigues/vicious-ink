@@ -25,8 +25,8 @@ const Footer = () => (
                     </a>
                     <a
                         className="link white hover-silver dib h2 w2 mr3"
-                        href={data.site.siteMetadata.socialMedia[0].url}
-                        title={data.site.siteMetadata.socialMedia[0].name}
+                        href={data.site.siteMetadata.socialMedia[1].url}
+                        title={data.site.siteMetadata.socialMedia[1].name}
                     >
                         <FontAwesomeIcon
                             icon={['fab', 'instagram']}
