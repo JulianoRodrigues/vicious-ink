@@ -3,13 +3,7 @@ const path = require('path')
 /**
  * Resolve absolute imports
  */
-exports.onCreateWebpackConfig = ({
-    stage,
-    getConfig,
-    rules,
-    loaders,
-    actions
-}) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
       resolve: {
         modules: [path.resolve(__dirname, "src"), "node_modules"],
