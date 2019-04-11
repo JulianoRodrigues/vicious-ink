@@ -16,7 +16,6 @@ const About = props => {
         return icon;
     });
     const svgIconsLeft = svgIconsArray.splice(2, 2);
-    console.log(svgIconsLeft)
     return (
         <Section className="mw8 center">
             <div className="cf ph2-ns">
@@ -77,7 +76,10 @@ const About = props => {
                                 const aboutImage = data.allContentfulImage.edges.map(
                                     ({ node: { photo } }) => photo
                                 )
-                                return <Image fluid={aboutImage[0].fluid} />
+                                return <Image 
+                                            alt={aboutImage[0].title}
+                                            fluid={aboutImage[0].fluid} 
+                                        />
                             }}
                         />
                     </div>
@@ -94,6 +96,7 @@ const ABOUT_IMAGE = graphql`
                 node {
                     name
                     photo {
+                        title
                         fluid {
                             ...GatsbyContentfulFluid
                         }

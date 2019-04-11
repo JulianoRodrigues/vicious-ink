@@ -45,7 +45,8 @@ export default ({ data: { allContentfulArtist } }) => {
                                 <TattooGrid>
                                     {artist && artist.tattoos.map((tattoo) => (
                                         <Tattoos key={tattoo.id}>
-                                            <Image
+                                            <Image 
+                                                alt={tattoo.title}
                                                 fixed={tattoo.fixed}
                                             />
                                         </Tattoos>
@@ -69,6 +70,7 @@ export const ARTIST_WORK = graphql`
                     path
                     tattoos {
                         id
+                        title
                         fixed(width: 300, height: 300) {
                             ...GatsbyContentfulFixed
                         }
