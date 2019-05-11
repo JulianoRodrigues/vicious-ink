@@ -5,8 +5,8 @@ module.exports = {
     description: `
         Portuguese all rounder tattoo artist! Owner of Vicious Ink and international guest artist!!
     `,
-    url: '',
-    siteUrl: '',
+    url: 'https://www.viciousinktattooshop.com/',
+    siteUrl: 'https://www.viciousinktattooshop.com/',
     siteLanguage: 'en',
     logo: 'static/logo/logo.png',
     favicon: 'static/logo/favicon.png',
