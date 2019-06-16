@@ -12,6 +12,7 @@ const Map = styled.div`
     height: 0;
 
     iframe {
+        border: none;
         left: 0;
         top: 0;
         height: 100%;
