@@ -3,7 +3,7 @@ module.exports = {
     title: 'Vicious Ink',
     titleAlt: 'Vicious Ink',
     description: `
-        Portuguese all rounder tattoo artist! Owner of Vicious Ink and international guest artist!!
+        Tatuador português, guest artist internacional e dono da Vicious Ink, Luís Rocha é o seu novo tatuador em Vila do Conde.
     `,
     url: 'https://www.viciousinktattooshop.com/',
     siteUrl: 'https://www.viciousinktattooshop.com/',

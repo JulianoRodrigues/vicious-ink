@@ -1,22 +1,23 @@
 [
     {
-        "tittle": "Tattooing",
+        "tittle": "Tatuagens",
         "icon": "machine",
-        "description": "For a premium result, at our tattoo studio we combine modern techniques with traditional ones."
+        "description": "Para excelentes resultados, os nossos tatuadores combinam técnicas modernas e tradicionais."
     },
     {
-        "tittle": "Custom Design",
+        "tittle": "Design Personalizado",
         "icon": "design",
-        "description": "Nothing can beat the challenge of creating a design that initially is only in your imagination."
+        "description": "Nada bate o desafio de criar o design que inicialmente apenas era da sua imaginação."
+        
     },
     {
         "tittle": "Cover Up",
         "icon": "cover",
-        "description": "Got some old tattoos that you don’t find pretty? Our talented artist will cover them up for you."
+        "description": "Tem tatuagens que já não gosta de as ver? Os nossos artistas encontrarão a melhor solução para as cobrir."
     },
     {
         "tittle": "Portfolio",
         "icon": "portfolio",
-        "description": "Still don't know which tattoo artist do you want? Check our artist's portfolio."
+        "description": "Ainda não se decidiu que artista escolher? Veja o portfolio dos nossos artistas."
     }
 ]
