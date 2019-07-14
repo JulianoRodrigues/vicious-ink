@@ -28,35 +28,35 @@ const Address = () => (
                 <div className="w-100">
                     <div className="flex flex-column pa4">
                         <h3 className="pa2 f4 fw2 white lh-copy bb">
-                            ${`Vicious Ink Tattoo Shop`}
+                            {`Vicious Ink Tattoo Shop`}
                         </h3>
                         <div className="pa2 mr2">
                             <p className="a3 mid-gray">${`R. 5 de Outubro 266`}</p>
                             <p className="a3 mid-gray">
-                                ${`4480-754 Vila do Conde`}
+                                {`4480-754 Vila do Conde`}
                             </p>
                         </div>
                         <h3 className="pa2 f4 fw2 white lh-copy bb">
-                            ${`Coordenadas`}
+                            {`Coordenadas`}
                         </h3>
                         <div className="pa2 mr2">
                             <p className="a3 mid-gray">${`N: 41°21'18.7"`}</p>
                             <p className="a3 mid-gray">${`W: 8°44'29.4"`}</p>
                         </div>
                         <h3 className="pa2 f4 fw2 white lh-copy bb">
-                            ${`Contactos`}
+                            {`Contactos`}
                         </h3>
                         <div className="pa2 mr2">
                             <p className="a3 mid-gray">
-                                ${`Telefone: (+351) 916 726 056`}
+                                {`Telefone: (+351) 916 726 056`}
                             </p>
                             <p className="a3 mid-gray">
-                                ${`E-mail:`}
+                                {`E-mail:`}
                                 <a
                                     className="link dim white f6 dib ml2"
                                     href="mailto:vicious.ink.vc@gmail.com"
                                 >
-                                    ${`vicious.ink.vc@gmail.com`}
+                                    {`vicious.ink.vc@gmail.com`}
                                 </a>
                             </p>
                         </div>

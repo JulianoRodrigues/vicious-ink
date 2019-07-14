@@ -22,7 +22,7 @@ const About = props => {
                 <div className="fl w-100 w-50-s w-75-l">
                     <div className="center-m w-50-m">
                         <h2 className="pa4 f2 fw2 white lh-copy tc">
-                            What we do
+                            {`What we do`}
                         </h2>
                         <div className="dt-l dt--fixed">
                             <div className="dt-row-l">

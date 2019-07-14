@@ -97,7 +97,7 @@ const Artists = ({ data: { allContentfulArtist } }) => {
                                                         </p>
                                                         <Link to={node.path}>
                                                             <span className="link dim white f6 f5-ns dib mr3">
-                                                                See tattoos
+                                                                {`Veja o seu trabalho.`}
                                                             </span>
                                                         </Link>
                                                     </ArtistInfo>

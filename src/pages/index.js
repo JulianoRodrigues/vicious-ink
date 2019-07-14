@@ -50,7 +50,7 @@ const Index = () => {
                             <TextContainer>
                                 <Link to="/studio">
                                     <span className="link dim gray b f1 tc db mb3 mb4-ns">
-                                        Enter
+                                        {`Entrar`}
                                     </span>
                                 </Link>
                             </TextContainer>

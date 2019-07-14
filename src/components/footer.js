@@ -12,7 +12,7 @@ const Footer = () => (
         render={data => {
             return (
                 <footer className="ph3 ph5-ns tc">
-                    <span className="link white dib h2 mr3">Follow us:</span>
+                    <span className="link white dib h2 mr3">{`Segue-nos:`}</span>
                     <a
                         className="link white hover-silver dib h2 w2 mr3"
                         href={data.site.siteMetadata.socialMedia[0].url}
@@ -34,7 +34,7 @@ const Footer = () => (
                         />
                     </a>
                     <p className="mid-gray">
-                        Copyright © 2019 Vicious Ink Tattoo Shop. All rights reserved.
+                        {`Copyright © 2019 Vicious Ink Tattoo Shop. All rights reserved.`}
                     </p>
                 </footer>
             )
