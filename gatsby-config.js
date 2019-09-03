@@ -6,9 +6,6 @@ module.exports = {
         ...config
     },
     plugins: [
-        'gatsby-plugin-react-helmet',
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
         {
             resolve: `gatsby-source-contentful`,
             options: {
@@ -16,7 +13,6 @@ module.exports = {
               accessToken: process.env.CONTENTFUL_API_TOKEN
             },
         },
-        'gatsby-transformer-json',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -43,6 +39,10 @@ module.exports = {
                 icon: config.favicon
             }
         },
+        'gatsby-plugin-react-helmet',
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-json',
         'gatsby-plugin-sass',
         'gatsby-plugin-offline',
         'gatsby-plugin-styled-components'

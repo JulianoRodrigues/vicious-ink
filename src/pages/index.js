@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -6,6 +6,12 @@ import Img from 'gatsby-image'
 import theme from '../styles/theme'
 import styled from 'styled-components'
 import Layout from '../layouts/layout'
+import Nav from '../components/navbar'
+import Main from '../components/main'
+import Hero from '../components/hero'
+import Store from '../components/store'
+import Footer from '../components/footer'
+import About from '../components/about'
 
 const Wrapper = styled.section`
     position: relative;
@@ -37,37 +43,48 @@ const TextContainer = styled.div`
     }
 `
 
-const Index = () => {
-    return (
-        <Layout>
-            <Helmet title={'Vicious Ink'} />
-            <StaticQuery
-                query={WELCOME_IMAGE}
-                render={data => {
-                    return (
-                        <Wrapper>
-                            <BgImg fluid={data.bannerImage.childImageSharp.fluid} />
-                            <TextContainer>
-                                <Link to="/studio">
-                                    <span className="link dim gray b f1 tc db mb3 mb4-ns">
-                                        {`Entrar`}
-                                    </span>
-                                </Link>
-                            </TextContainer>
-                        </Wrapper>
-                    )
-                }}
-            />
-        </Layout>
-    )
+class Index extends Component {
+
+    
+    constructor (props) {
+        const { data: { allSvgJson } } = props;
+        super(props);
+        this.state = {
+            showPopup: true,
+            allSvgJson
+        }
+    }
+
+    togglePopup () {
+        this.setState({
+            showPopup: !this.state.showPopup
+        })
+    }
+
+    render() {
+        return (
+            <Layout>
+                <Helmet title={'Vicious Ink'} />
+                <Nav />
+                <Main>
+                    <Hero />
+                    <Store />
+                    <About data={this.state.allSvgJson} />
+                </Main>
+                <Footer />
+            </Layout>
+        )
+    }
 }
 
-const WELCOME_IMAGE = graphql`
-    query WelcomeImage {
-        bannerImage: file(relativePath: { eq: "banner.png" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
+export const imageAndSvg = graphql`
+    query {
+        allSvgJson {
+            edges {
+                node {
+                    tittle
+                    description
+                    icon
                 }
             }
         }
