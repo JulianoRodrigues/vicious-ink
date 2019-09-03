@@ -12,7 +12,6 @@ const Flex = styled.div`
 `
 
 const About = props => {
-    console.log(props)
     const svgIconsArray = props.data.edges.map(( icon ) => {
         return icon;
     });
