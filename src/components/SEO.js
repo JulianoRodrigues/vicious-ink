@@ -43,8 +43,6 @@ export const SEO = ({ title, description, siteLanguage }) => (
     />
 )
 
-export default SEO
-
 SEO.defaultProps = {
     title: null,
     description: null,
@@ -64,3 +62,4 @@ const query = graphql`
         }
     }
 `
+export default SEO

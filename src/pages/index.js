@@ -35,23 +35,36 @@ const TextContainer = styled.div`
     box-sizing: border-box;
     max-width: 768px;
     position: absolute;
-    bottom: 6rem;
-    right: 6rem;
     text-transform: uppercase;
     a {
         color: ${theme.colors.main};
     }
 `
 
+const PopUp = styled.div`
+    background-color: blue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    height:200px;
+    width:300px;
+    display: inline-block;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    z-index: 10;
+`
+
 class Index extends Component {
 
-    
     constructor (props) {
-        const { data: { allSvgJson } } = props;
+        const { data: { allSvgJson, bannerImage } } = props;
         super(props);
         this.state = {
             showPopup: true,
-            allSvgJson
+            allSvgJson,
+            bannerImage
         }
     }
 
@@ -64,9 +77,19 @@ class Index extends Component {
     render() {
         return (
             <Layout>
+                <section>
+                    {this.state.showPopup ? 
+                        <PopUp>
+                            <TextContainer>CENAS</TextContainer>
+                        </PopUp>
+                        :
+                        null
+                    }
+                    </section>
                 <Helmet title={'Vicious Ink'} />
                 <Nav />
                 <Main>
+                    
                     <Hero />
                     <Store />
                     <About data={this.state.allSvgJson} />
@@ -85,6 +108,13 @@ export const imageAndSvg = graphql`
                     tittle
                     description
                     icon
+                }
+            }
+        }
+        bannerImage: file(relativePath: { eq: "banner.png" }) {
+            childImageSharp {
+                fluid {
+                    base64
                 }
             }
         }
