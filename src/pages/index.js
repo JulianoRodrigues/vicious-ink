@@ -17,19 +17,6 @@ const Wrapper = styled.section`
     position: relative;
     min-height: 300px;
 `
-const BgImg = styled(Img)`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    height: 100vh;
-    & > img {
-        object-fit: cover !important;
-        object-position: 0% 0% !important;
-        font-family: 'object-fit: cover !important; object-position: 0% 0% !important;';
-    }
-`
 
 const TextContainer = styled.div`
     box-sizing: border-box;
@@ -42,18 +29,45 @@ const TextContainer = styled.div`
 `
 
 const PopUp = styled.div`
-    background-color: blue;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    height:200px;
-    width:300px;
-    display: inline-block;
-    position:fixed;
-    top:50%;
-    left:50%;
+    position: fixed;
+    width: 280px;
+    left: 50%;
     margin-left: -150px;
+    height: 180px;
+    top: 50%;
     margin-top: -100px;
     z-index: 10;
+    &:after {
+        position: fixed;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: -2;
+    }
+    &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+`
+
+const PopImage = styled(Img)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    & > img {
+        object-fit: cover !important;
+        object-position: 0% 0% !important;
+        font-family: 'object-fit: cover !important; object-position: 0% 0% !important;';
+    }
 `
 
 class Index extends Component {
@@ -62,9 +76,9 @@ class Index extends Component {
         const { data: { allSvgJson, bannerImage } } = props;
         super(props);
         this.state = {
-            showPopup: true,
             allSvgJson,
-            bannerImage
+            bannerImage,
+            showPopup: true,
         }
     }
 
@@ -80,7 +94,9 @@ class Index extends Component {
                 <section>
                     {this.state.showPopup ? 
                         <PopUp>
-                            <TextContainer>CENAS</TextContainer>
+                            <PopImage
+                                fluid={this.state.bannerImage.childImageSharp.fluid}
+                            />
                         </PopUp>
                         :
                         null
@@ -114,7 +130,7 @@ export const imageAndSvg = graphql`
         bannerImage: file(relativePath: { eq: "banner.png" }) {
             childImageSharp {
                 fluid {
-                    base64
+                    ...GatsbyImageSharpFluid
                 }
             }
         }

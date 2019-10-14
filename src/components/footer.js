@@ -3,8 +3,8 @@ import { graphql, StaticQuery } from 'gatsby'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
-library.add(faFacebookF, faInstagram)
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+library.add(faFacebookF, faInstagram);
 
 const Footer = () => (
     <StaticQuery
