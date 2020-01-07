@@ -10,13 +10,14 @@ const LogoImage = styled(Img)`
     margin: 0 auto;
 `
 
-const NavBar = () => (
+const NavigationBar = () => (
     <StaticQuery
         query={LOGO_IMAGE}
         render={data => {
             const logo = data.allContentfulImage.edges.map(
                 ({ node: { photo } }) => photo
-            )
+            );
+
             return (
                 <Headroom disableInlineStyles>
                     <header>
@@ -46,10 +47,10 @@ const NavBar = () => (
                         </nav>
                     </header>
                 </Headroom>
-            )
+            );
         }}
     />
-)
+);
 
 const LOGO_IMAGE = graphql`
     query LogoImage {
@@ -66,6 +67,6 @@ const LOGO_IMAGE = graphql`
             }
         }
     }
-`
+`;
 
-export default NavBar
+export default NavigationBar

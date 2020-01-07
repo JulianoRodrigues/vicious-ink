@@ -6,12 +6,12 @@ import Img from 'gatsby-image'
 import theme from '../styles/theme'
 import styled from 'styled-components'
 import Layout from '../layouts/layout'
-import Nav from '../components/navbar'
-import Main from '../components/main'
-import Hero from '../components/hero'
-import Store from '../components/store'
+import Nav from '../components/header/navigationBar'
+import Main from '../components/main/index'
+import Hero from '../components/hero/index'
+import Store from '../components/store-details/store'
 import Footer from '../components/footer'
-import About from '../components/about'
+import About from '../components/about/index'
 
 const Wrapper = styled.section`
     position: relative;
@@ -28,11 +28,15 @@ const TextContainer = styled.div`
     }
 `
 
+const Box = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 const PopUp = styled.div`
     position: fixed;
     width: 280px;
-    left: 50%;
-    margin-left: -150px;
     height: 180px;
     top: 50%;
     margin-top: -100px;
@@ -73,8 +77,11 @@ const PopImage = styled(Img)`
 class Index extends Component {
 
     constructor (props) {
+
         const { data: { allSvgJson, bannerImage } } = props;
+
         super(props);
+
         this.state = {
             allSvgJson,
             bannerImage,
@@ -93,11 +100,13 @@ class Index extends Component {
             <Layout>
                 <section>
                     {this.state.showPopup ? 
-                        <PopUp>
-                            <PopImage
-                                fluid={this.state.bannerImage.childImageSharp.fluid}
-                            />
-                        </PopUp>
+                        <Box>
+                            <PopUp>
+                                <PopImage
+                                    fluid={this.state.bannerImage.childImageSharp.fluid}
+                                />
+                            </PopUp>
+                        </Box>
                         :
                         null
                     }

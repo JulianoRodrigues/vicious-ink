@@ -7,7 +7,7 @@ const Wrapper = styled.section`
     position: relative;
 `
 
-const Hero = () => (
+export default () => (
     <StaticQuery
         query={HERO_IMAGE}
         render={data => {
@@ -18,10 +18,10 @@ const Hero = () => (
                 <Wrapper>
                     <Img fluid={heroImage[0].fluid} />
                 </Wrapper>
-            )
+            );
         }}
     />
-)
+);
 
 const HERO_IMAGE = graphql`
     query HeroImage {
@@ -38,6 +38,4 @@ const HERO_IMAGE = graphql`
             }
         }
     }
-`
-
-export default Hero
+`;

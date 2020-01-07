@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { SEO } from '../components/SEO'
+import { SEO } from '../components/seo/SEO'
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'

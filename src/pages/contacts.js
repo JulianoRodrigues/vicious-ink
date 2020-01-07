@@ -2,10 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Layout from '../layouts/layout'
-import Nav from '../components/navbar'
-import Main from '../components/main'
-import Footer from '../components/footer'
-import Address from '../components/address'
+import Nav from '../components/header/navigationBar'
+import Main from '../components/main/index'
+import Footer from '../components/footer/index'
+import Address from '../components/address/index'
 
 const Contacts = () => {
     return (

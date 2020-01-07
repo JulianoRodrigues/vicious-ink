@@ -1,8 +1,8 @@
 import React from 'react'
-import SVGIcon from '../components/svgicon'
+import SVGIcon from '../svg-icons/svgicon'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import { Image } from '../styles/base'
+import { Image } from '../../styles/base'
 
 const Section = styled.section`
     padding: 0px 24px 50px;
@@ -11,11 +11,14 @@ const Flex = styled.div`
     display: flex;
 `
 
-const About = props => {
+export default (props) => {
+
     const svgIconsArray = props.data.edges.map(( icon ) => {
         return icon;
     });
+
     const svgIconsLeft = svgIconsArray.splice(2, 2);
+
     return (
         <Section className="mw8 center">
             <div className="cf ph2-ns">
@@ -86,8 +89,8 @@ const About = props => {
                 </div>
             </div>
         </Section>
-    )
-}
+    );
+};
 
 const ABOUT_IMAGE = graphql`
     query AboutPage {
@@ -105,6 +108,4 @@ const ABOUT_IMAGE = graphql`
             }
         }
     }
-`
-
-export default About
+`;

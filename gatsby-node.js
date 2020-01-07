@@ -20,7 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
     return new Promise((resolve, reject) => {
-        const artistWorkTemplate = path.resolve('./src/templates/artistWork.js')
+        const artistWorkTemplate = path.resolve('./src/templates/artist-work.js')
 
         //query for the tattoos
         resolve(

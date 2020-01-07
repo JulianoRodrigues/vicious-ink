@@ -6,9 +6,9 @@ import remcalc from 'remcalc'
 import { Image } from '../styles/base'
 
 import Layout from 'layouts/layout'
-import Nav from 'components/navbar'
-import Main from 'components/main'
-import Footer from 'components/footer'
+import Nav from 'components/header/navigationBar'
+import Main from 'components/main/index'
+import Footer from 'components/footer/index'
 
 const Section = styled.section`
     padding: 0px 24px 50px;
@@ -32,10 +32,10 @@ const Tattoos = styled.div`
 `
 
 export default ({ data: { allContentfulArtist } }) => {
-    const artist = allContentfulArtist.edges[0].node;
+    const { tattoos, path } = allContentfulArtist.edges[0].node;
     return (
         <Layout>
-            <Helmet title={allContentfulArtist.edges[0].node.name}/>
+            <Helmet title={path.replace(/[^a-zA-Z0-9]/g, "")}/>
             <Nav/>
             <Main>
                 <Section className="mw9 center">
@@ -43,7 +43,7 @@ export default ({ data: { allContentfulArtist } }) => {
                         <div className="fl w-100">
                             <div className="w-100">
                                 <TattooGrid>
-                                    {artist && artist.tattoos.map((tattoo) => (
+                                    {tattoos && tattoos.map((tattoo) => (
                                         <Tattoos key={tattoo.id}>
                                             <Image 
                                                 alt={tattoo.title}

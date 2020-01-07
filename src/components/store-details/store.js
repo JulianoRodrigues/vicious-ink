@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Image } from '../styles/base'
+import { Image } from '../../styles/base'
 
 const Section = styled.section`
     padding: 80px 24px 96px;

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 library.add(faFacebookF, faInstagram);
 
-const Footer = () => (
+export default () => (
     <StaticQuery
         query={SOCIAL_MEDIA}
         render={data => {
@@ -37,10 +37,10 @@ const Footer = () => (
                         {`Copyright © 2019 Vicious Ink Tattoo Shop. All rights reserved.`}
                     </p>
                 </footer>
-            )
+            );
         }}
     />
-)
+);
 
 const SOCIAL_MEDIA = graphql`
     query {
@@ -53,6 +53,4 @@ const SOCIAL_MEDIA = graphql`
             }
         }
     }
-`
-
-export default Footer
+`;

@@ -21,7 +21,7 @@ const Map = styled.div`
     }
 `
 
-const Address = () => (
+export default () => (
     <Section className="mw9 center">
         <div className="cf ph2-ns">
             <div className="fl w-100 l w-100 w-50-s w-25-l">
@@ -79,6 +79,4 @@ const Address = () => (
             </div>
         </div>
     </Section>
-)
-
-export default Address
+);
