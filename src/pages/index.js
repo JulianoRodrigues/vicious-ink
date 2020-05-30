@@ -3,6 +3,11 @@ import Helmet from 'react-helmet'
 import { graphql, Link, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+library.add(faTimes);
+
 import theme from '../styles/theme'
 import styled from 'styled-components'
 import Layout from '../layouts/layout'
@@ -12,21 +17,6 @@ import Hero from '../components/hero/index'
 import Store from '../components/store-details/store'
 import Footer from '../components/footer'
 import About from '../components/about/index'
-
-const Wrapper = styled.section`
-    position: relative;
-    min-height: 300px;
-`
-
-const TextContainer = styled.div`
-    box-sizing: border-box;
-    max-width: 768px;
-    position: absolute;
-    text-transform: uppercase;
-    a {
-        color: ${theme.colors.main};
-    }
-`
 
 const Box = styled.div`
     display: flex;
@@ -85,8 +75,10 @@ class Index extends Component {
         this.state = {
             allSvgJson,
             bannerImage,
-            showPopup: true,
+            showPopup: false
         }
+
+        this.togglePopup = this.togglePopup.bind(this);
     }
 
     togglePopup () {
@@ -99,16 +91,20 @@ class Index extends Component {
         return (
             <Layout>
                 <section>
-                    {this.state.showPopup ? 
+                    {this.state.showPopup &&
                         <Box>
                             <PopUp>
+                                <span onClick={this.togglePopup}>
+                                    <FontAwesomeIcon
+                                        icon={['fa', 'times']}
+                                        size="lg"
+                                    />
+                                </span>
                                 <PopImage
                                     fluid={this.state.bannerImage.childImageSharp.fluid}
                                 />
                             </PopUp>
                         </Box>
-                        :
-                        null
                     }
                     </section>
                 <Helmet title={'Vicious Ink'} />
