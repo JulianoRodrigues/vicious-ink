@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Image } from '../../styles/base'
+import { Image, CenteredImage } from '../../styles/base'
 
 const Section = styled.section`
     padding: 80px 24px 96px;
@@ -26,8 +26,10 @@ const Store = () => (
                 <Section className="mw8 center ph3-ns">
                     <div className="cf ph2-ns">
                         <div className="fl w-100 w-50-s w-50-l">
-                            <div className="center-m w-50-m">
-                                <Image fluid={storeImage[0].fluid} />
+                            <div className="center-m w-50-s w-50-m">
+                                <CenteredImage >
+                                    <Image fluid={storeImage[0].fluid} />
+                                </CenteredImage>
                             </div>
                         </div>
                         <div className="fl w-100 w-50-s w-50-l">
@@ -37,10 +39,10 @@ const Store = () => (
                                 </h2>
                                 <p className="pa3 b">{description}</p>
                                 <p className="pa3 mid-gray">
-                                    {`Our staff consistently upgrades their
-                                    ability and knowledge through training to
-                                    ensure your tattoo is performed using the
-                                    latest industry standards.`}
+                                    {`A nossa equipa está constantemente a melhorar
+                                    a sua abilidade e conhecimento através de treino
+                                    para assegurar que a sua tatuagem é realizada
+                                    com as mais recentes técnicas da indústria.`}
                                 </p>
                             </div>
                         </div>

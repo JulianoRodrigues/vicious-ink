@@ -2,9 +2,18 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import theme from '../../styles/theme';
 
 const Wrapper = styled.section`
     position: relative;
+`
+
+const HeroImage = styled(Img)`
+    @media screen and (max-width: ${theme.responsive.small}) {
+        & > img {
+            position: initial !important;
+        }
+    }
 `
 
 export default () => (
@@ -16,7 +25,7 @@ export default () => (
             )
             return (
                 <Wrapper>
-                    <Img fluid={heroImage[0].fluid} />
+                    <HeroImage fluid={heroImage[0].fluid} alt='Luis Rocha' />
                 </Wrapper>
             );
         }}

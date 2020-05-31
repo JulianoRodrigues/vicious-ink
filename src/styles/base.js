@@ -29,3 +29,11 @@ export const Links = styled(Link)`
 export const Image = styled(Img)`
     border-radius: ${remcalc(5)};
 `
+
+export const CenteredImage = styled.div`
+    @media screen and (max-width: ${theme.sizes.maxWidthCentered}) {
+        width: 75%;
+        margin: auto;
+    }
+
+`

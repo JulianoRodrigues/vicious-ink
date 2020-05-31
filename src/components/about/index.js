@@ -13,9 +13,7 @@ const Flex = styled.div`
 
 export default (props) => {
 
-    const svgIconsArray = props.data.edges.map(( icon ) => {
-        return icon;
-    });
+    const svgIconsArray = props.data.edges.map(icon => icon);
 
     const svgIconsLeft = svgIconsArray.splice(2, 2);
 
@@ -25,7 +23,7 @@ export default (props) => {
                 <div className="fl w-100 w-50-s w-75-l">
                     <div className="center-m w-50-m">
                         <h2 className="pa4 f2 fw2 white lh-copy tc">
-                            {`What we do`}
+                            {`O que fazemos`}
                         </h2>
                         <div className="dt-l dt--fixed">
                             <div className="dt-row-l">
