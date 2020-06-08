@@ -25,14 +25,14 @@ const Store = () => (
             return (
                 <Section className="mw8 center ph3-ns">
                     <div className="cf ph2-ns">
-                        <div className="fl w-100 w-50-s w-50-l">
-                            <div className="center-m w-50-s w-50-m">
+                        <div className="fl w-25-l">
+                            <div className="center-m w-50-m">
                                 <CenteredImage >
                                     <Image fluid={storeImage[0].fluid} />
                                 </CenteredImage>
                             </div>
                         </div>
-                        <div className="fl w-100 w-50-s w-50-l">
+                        <div className="fl w-100 w-50-s w-75-l">
                             <div className="center-m w-50-m">
                                 <h2 className="pa4 f2 fw2 white lh-copy tc">
                                     {`Estúdio`}
