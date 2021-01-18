@@ -7,11 +7,22 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: `gatsby-plugin-gdpr-cookies`,
+            options: {
+                googleAnalytics: {
+                    trackingId: process.env.GOOGLE_ANALYTICS_ID,
+                    cookieName: 'gatsby-gdpr-google-analytics',
+                    allowAdFeatures: false
+                },
+                environments: ['production', 'development']
+            }
+        },
+        {
             resolve: `gatsby-source-contentful`,
             options: {
               spaceId: process.env.CONTENTFUL_SPACE_ID,
               accessToken: process.env.CONTENTFUL_API_TOKEN
-            },
+            }
         },
         {
             resolve: 'gatsby-source-filesystem',

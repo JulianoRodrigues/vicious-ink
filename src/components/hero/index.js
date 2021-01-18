@@ -11,7 +11,7 @@ const Wrapper = styled.section`
 const HeroImage = styled(Img)`
     @media screen and (max-width: ${theme.responsive.small}) {
         & > img {
-            position: initial !important;
+            position: initial;
         }
     }
 `

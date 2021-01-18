@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link, StaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 library.add(faTimes);
 
-import theme from '../styles/theme'
 import styled from 'styled-components'
 import Layout from '../layouts/layout'
 import Nav from '../components/header/navigationBar'
