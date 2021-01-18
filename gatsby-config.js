@@ -7,10 +7,23 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // The property ID; the tracking code won't be generated without it
+                trackingId: "G-4GSGKB4KQ5",
+                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                head: true,
+                // Delays sending pageview hits on route update (in milliseconds)
+                pageTransitionDelay: 0,
+                // Defers execution of google analytics script after page load
+                defer: false,
+            },
+        },
+        {
             resolve: `gatsby-plugin-gdpr-cookies`,
             options: {
                 googleAnalytics: {
-                    trackingId: process.env.GOOGLE_ANALYTICS_ID,
+                    trackingId: "G-4GSGKB4KQ5",
                     cookieName: 'gatsby-gdpr-google-analytics',
                     allowAdFeatures: false
                 },
